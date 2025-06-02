@@ -27,14 +27,29 @@ export const venue = defineType({
       type: 'text',
       name: 'description',
       title: 'Description',
-      rows: 2,
+      rows: 3,
     }),
     defineField({
-      type: 'string',
+      type: 'array',
       name: 'contactInfo',
       title: 'Contact Information',
+      of: [
+        {
+          type: 'contact',
+        },
+      ],
     }),
     defineField({type: 'number', name: 'capacity', title: 'Capacity'}),
-    defineField({type: 'image', name: 'images', title: 'Gallery'}),
+    defineField({
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+        },
+      ],
+      name: 'images',
+      title: 'Venue Images',
+      description: 'Add up to 5 images',
+    }),
   ],
 })

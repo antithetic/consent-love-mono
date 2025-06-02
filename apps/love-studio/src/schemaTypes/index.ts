@@ -1,4 +1,5 @@
 import {artist} from './documents/artist'
+import {contact} from './documents/contact'
 import {event} from './documents/event'
 import {flyer} from './documents/flyer'
 import {link} from './documents/link'
@@ -10,6 +11,7 @@ import {streetAddress} from './objects/streetAddress'
 
 export const schemaTypes = [
   artist,
+  contact,
   event,
   eventSlug,
   flyer,
