@@ -3,6 +3,7 @@ import {defineField, defineType} from 'sanity'
 export const seoFields = defineType({
   name: 'seoFields',
   type: 'object',
+  title: 'SEO fields',
   fields: [
     defineField({
       name: 'title',
@@ -27,6 +28,9 @@ export const seoFields = defineType({
       name: 'logo',
       title: 'Site Logo',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 })

@@ -10,10 +10,13 @@ export const flyer = defineType({
     defineField({
       name: 'name',
       type: 'string',
+      title: 'Flyer Name',
     }),
     defineField({
       name: 'image',
       type: 'imageBlock',
+      title: 'Flyer Image',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })
