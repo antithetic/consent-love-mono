@@ -7,6 +7,8 @@ export const seoFields = defineType({
     defineField({
       name: 'title',
       type: 'string',
+      title: 'SEO Title',
+      validation: (Rule) => Rule.required().max(60).warning('SEO titles should be under 60 characters'),
     }),
     defineField({
       name: 'description',
