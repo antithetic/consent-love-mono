@@ -1,6 +1,10 @@
 import {defineField} from 'sanity'
 
 const normalizeTag = (value: string): string => {
+  if (!value || typeof value !== 'string') {
+    return ''
+  }
+
   return value
     .toLowerCase()
     .trim()
