@@ -15,7 +15,7 @@ export const member = defineType({
       name: 'artistProfile',
       type: 'reference',
       description:
-        'Link,  or create, artist profile. This will be linked on the website.',
+        'Link, or create, artist profile. This will be linked on the website.',
       to: [{type: 'artist'}],
     }),
   ],
