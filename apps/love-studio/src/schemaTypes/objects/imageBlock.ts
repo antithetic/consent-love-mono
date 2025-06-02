@@ -5,8 +5,16 @@ export const imageBlock = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'description',
       type: 'string',
+      title: 'Alt text / Description',
     }),
   ],
 })
