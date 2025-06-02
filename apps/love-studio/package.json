@@ -40,7 +40,7 @@
   },
   "prettier": {
     "semi": false,
-    "printWidth": 80,
+    "printWidth": 100,
     "bracketSpacing": false,
     "singleQuote": true,
     "arrayExpand": true
