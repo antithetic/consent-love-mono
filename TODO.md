@@ -7,11 +7,11 @@
 - [ ] Priority Level: [Medium]
 
 ## 📋 Core Features
-- [ ] Feature 1
-  - [ ] Subtask 1.1
+- [ ] Astro frontend
+  - [ ] initial setup
   - [ ] Subtask 1.2
-- [ ] Feature 2
-  - [ ] Subtask 2.1
+- [ ] Sanity Studio
+  - [ ] initial setup
   - [ ] Subtask 2.2
 
 ## 🛠️ Technical Setup
