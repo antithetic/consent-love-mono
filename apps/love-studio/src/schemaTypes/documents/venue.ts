@@ -18,8 +18,17 @@ export const venue = defineType({
       name: 'website',
       title: 'Venue Website',
     }),
-    defineField({type: 'streetAddress', name: 'address', title: 'Address'}),
-    defineField({type: 'text', name: 'description', title: 'Description'}),
+    defineField({
+      type: 'streetAddress',
+      name: 'address',
+      title: 'Venue  Address',
+    }),
+    defineField({
+      type: 'text',
+      name: 'description',
+      title: 'Description',
+      rows: 2,
+    }),
     defineField({
       type: 'string',
       name: 'contactInfo',
