@@ -5,6 +5,7 @@ import {link} from './documents/link'
 import {member} from './documents/member'
 import {settings} from './documents/settings'
 import {venue} from './documents/venue'
+import {streetAddress} from './objects/streetAddress'
 
 export const schemaTypes = [
   archiveFlyer,
@@ -13,5 +14,6 @@ export const schemaTypes = [
   link,
   member,
   settings,
+  streetAddress,
   venue,
 ]

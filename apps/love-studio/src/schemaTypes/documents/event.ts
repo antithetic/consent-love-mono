@@ -1,9 +1,11 @@
+import {DiscoBallIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
 export const event = defineType({
   name: 'event',
   title: 'Event',
   type: 'document',
+  icon: DiscoBallIcon,
   fields: [
     defineField({
       name: 'name',
