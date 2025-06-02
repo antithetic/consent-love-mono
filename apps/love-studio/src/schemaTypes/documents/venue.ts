@@ -9,7 +9,7 @@ export const venue = defineType({
   fields: [
     defineField({
       type: 'string',
-      name: 'Name',
+      name: 'name',
       title: 'Venue Name',
       validation: (e) => e.required(),
     }),
