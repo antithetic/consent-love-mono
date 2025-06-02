@@ -12,7 +12,7 @@ export const event = defineType({
     defineField({
       name: 'image',
       title: 'Event Flyer',
-      type: 'imageBlock',
+      type: 'image',
     }),
     defineField({
       name: 'name',
@@ -99,7 +99,7 @@ export const event = defineType({
       return {
         title: artists ? `${nameFormatted} (${artists})` : nameFormatted,
         subtitle: venue ? `${dateFormatted} at ${venue}` : dateFormatted,
-        media: image || CalendarDotsIcon,
+        media: image?.asset || CalendarDotsIcon,
       }
     },
   },
