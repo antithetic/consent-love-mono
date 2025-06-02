@@ -5,6 +5,7 @@ import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {media} from 'sanity-plugin-media'
 
 import {schemaTypes} from './src/schemaTypes'
+import {structure} from './src/structure'
 
 export default defineConfig({
   name: 'default',
@@ -13,7 +14,12 @@ export default defineConfig({
   projectId: '6ziojjbn',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool(), media(), imageAssetPickerPlugin()],
+  plugins: [
+    structureTool({structure}),
+    visionTool(),
+    media(),
+    imageAssetPickerPlugin(),
+  ],
 
   schema: {
     types: schemaTypes,
