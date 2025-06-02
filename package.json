@@ -9,5 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.11.0"
+  "packageManager": "pnpm@10.11.0",
+  "workspaces": [
+    "love-astro",
+    "love-studio"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
 }
