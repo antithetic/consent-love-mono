@@ -1,6 +1,8 @@
 import {UserRectangleIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
+import {genreTagsField} from '../definitions/genreTagsField'
+
 export const artist = defineType({
   name: 'artist',
   title: 'Artist',
@@ -17,6 +19,10 @@ export const artist = defineType({
       title: 'Biography',
       rows: 3,
     }),
+    {
+      ...genreTagsField,
+      title: 'Artist Tags',
+    },
     defineField({
       name: 'image',
       type: 'imageBlock',

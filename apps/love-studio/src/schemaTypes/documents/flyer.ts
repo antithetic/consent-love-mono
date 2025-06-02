@@ -1,6 +1,8 @@
 import {ImageIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
+import {genreTagsField} from '../definitions/genreTagsField'
+
 export const flyer = defineType({
   name: 'flyer',
   title: 'Flyer',
@@ -18,5 +20,9 @@ export const flyer = defineType({
       title: 'Flyer Image',
       validation: (Rule) => Rule.required(),
     }),
+    {
+      ...genreTagsField,
+      title: 'Flyer Tags',
+    },
   ],
 })
