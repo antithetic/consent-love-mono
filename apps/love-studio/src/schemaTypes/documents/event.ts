@@ -8,13 +8,18 @@ export const event = defineType({
   icon: CalendarDotsIcon,
   fields: [
     defineField({
+      name: 'image',
+      type: 'image',
+    }),
+    defineField({
       name: 'name',
+      title: 'Event Name',
       type: 'string',
     }),
     defineField({
       name: 'slug',
-      type: 'slug',
-      options: {source: 'name'},
+      title: 'Path',
+      type: 'eventSlug',
     }),
     defineField({
       name: 'eventType',
@@ -37,10 +42,6 @@ export const event = defineType({
       name: 'artists',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'artist'}]}],
-    }),
-    defineField({
-      name: 'image',
-      type: 'image',
     }),
     defineField({
       name: 'details',
