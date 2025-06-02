@@ -2,7 +2,7 @@ import {ImageBrokenIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
 export const flyer = defineType({
-  name: 'Flyer',
+  name: 'flyer',
   title: 'Flyer',
   type: 'document',
   icon: ImageBrokenIcon,
