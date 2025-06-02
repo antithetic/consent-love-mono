@@ -18,7 +18,7 @@ export const contact = defineType({
     defineField({
       name: 'phoneNumber',
       title: 'Phone Number',
-      type: 'number',
+      type: 'string',
     }),
     defineField({
       name: 'info',
