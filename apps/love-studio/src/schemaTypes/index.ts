@@ -7,6 +7,7 @@ import {member} from './documents/member'
 import {settings} from './documents/settings'
 import {venue} from './documents/venue'
 import {eventSlug} from './objects/eventSlug'
+import {imageBlock} from './objects/imageBlock'
 import {streetAddress} from './objects/streetAddress'
 
 export const schemaTypes = [
@@ -15,6 +16,7 @@ export const schemaTypes = [
   event,
   eventSlug,
   flyer,
+  imageBlock,
   link,
   member,
   settings,
