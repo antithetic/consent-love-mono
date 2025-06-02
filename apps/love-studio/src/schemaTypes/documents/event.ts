@@ -11,7 +11,8 @@ export const event = defineType({
   fields: [
     defineField({
       name: 'image',
-      type: 'image',
+      title: 'Event Flyer',
+      type: 'imageBlock',
     }),
     defineField({
       name: 'name',

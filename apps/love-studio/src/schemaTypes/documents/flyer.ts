@@ -13,11 +13,7 @@ export const flyer = defineType({
     }),
     defineField({
       name: 'image',
-      type: 'image',
-    }),
-    defineField({
-      name: 'publishDate',
-      type: 'datetime',
+      type: 'imageBlock',
     }),
   ],
 })
