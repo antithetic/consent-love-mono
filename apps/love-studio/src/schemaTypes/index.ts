@@ -9,13 +9,13 @@ import {eventSlug} from './objects/eventSlug'
 import {streetAddress} from './objects/streetAddress'
 
 export const schemaTypes = [
-  flyer,
   artist,
   event,
+  eventSlug,
+  flyer,
   link,
   member,
   settings,
   streetAddress,
   venue,
-  eventSlug,
 ]
