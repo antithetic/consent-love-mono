@@ -1,5 +1,13 @@
 import {defineField} from 'sanity'
 
+const normalizeTag = (value: string): string => {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]/g, '')
+}
+
 export const genreTagsField = defineField({
   name: 'genreTags',
   type: 'tags',
@@ -8,21 +16,11 @@ export const genreTagsField = defineField({
     allowCreate: true,
     onCreate: (value: string) => ({
       label: value,
-      value: value
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]/g, ''),
+      value: normalizeTag(value),
     }),
     checkValid: (input: string, values: string[]) => {
-      const normalizedInput = input
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]/g, '')
-      return (
-        !!input && input.trim() === input && !values.includes(normalizedInput)
-      )
+      const normalizedInput = normalizeTag(input)
+      return !!input && !values.includes(normalizedInput)
     },
   },
 })
