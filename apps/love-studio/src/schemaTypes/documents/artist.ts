@@ -14,11 +14,13 @@ export const artist = defineType({
     defineField({
       name: 'bio',
       type: 'text',
+      title: 'Biography',
       rows: 3,
     }),
     defineField({
       name: 'image',
       type: 'imageBlock',
+      title: 'Profile Image',
     }),
   ],
 })
