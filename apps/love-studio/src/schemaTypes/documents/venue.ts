@@ -33,11 +33,7 @@ export const venue = defineType({
       type: 'array',
       name: 'contactInfo',
       title: 'Contact Information',
-      of: [
-        {
-          type: 'contact',
-        },
-      ],
+      of: [{type: 'reference', to: [{type: 'contact'}]}],
     }),
     defineField({type: 'number', name: 'capacity', title: 'Capacity'}),
     defineField({

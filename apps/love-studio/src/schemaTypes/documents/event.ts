@@ -1,7 +1,7 @@
 import {CalendarDotsIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
-import {DoorsOpenInput} from '../components/doorsOpenInput'
+import {DoorsOpenInput} from '../components/DoorsOpenInput'
 
 export const event = defineType({
   name: 'event',

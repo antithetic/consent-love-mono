@@ -1,8 +1,10 @@
+import {PhoneIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
 export const contact = defineType({
   name: 'contact',
   type: 'document',
+  icon: PhoneIcon,
   fields: [
     defineField({
       name: 'name',
@@ -12,6 +14,11 @@ export const contact = defineType({
       name: 'email',
       type: 'email',
       title: 'Contact Email',
+    }),
+    defineField({
+      name: 'phoneNumber',
+      title: 'Phone Number',
+      type: 'number',
     }),
     defineField({
       name: 'info',
