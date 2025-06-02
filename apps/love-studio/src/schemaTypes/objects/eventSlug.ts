@@ -1,8 +1,10 @@
+import {LinkSimpleIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
 export const eventSlug = defineType({
   type: 'object',
   name: 'eventSlug',
+  icon: LinkSimpleIcon,
   fields: [
     defineField({
       type: 'slug',
