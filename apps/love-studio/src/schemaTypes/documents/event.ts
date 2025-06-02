@@ -79,7 +79,13 @@ export const event = defineType({
     select: {
       name: 'name',
       venue: 'venue.name',
-      artist: 'headline.name',
+      select: {
+        name: 'name',
+        venue: 'venue.name',
+        artist: 'artists.0.name',
+        date: 'date',
+        image: 'image',
+      },
       date: 'date',
       image: 'image',
     },
