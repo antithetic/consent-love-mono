@@ -10,6 +10,26 @@ export const link = defineType({
     defineField({
       name: 'name',
       type: 'string',
+      title: 'Display Name',
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
+      name: 'url',
+      type: 'url',
+      title: 'URL',
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
+      name: 'description',
+      type: 'text',
+      title: 'Description',
+      rows: 3,
+    }),
+    defineField({
+      name: 'openInNewTab',
+      type: 'boolean',
+      title: 'Open in new tab',
+      initialValue: false,
     }),
   ],
 })
