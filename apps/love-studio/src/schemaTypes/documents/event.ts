@@ -8,6 +8,10 @@ export const event = defineType({
   title: 'Event',
   type: 'document',
   icon: CalendarDotsIcon,
+  groups: [
+    {name: 'details', title: 'Details'},
+    {name: 'editorial', title: 'Editorial'},
+  ],
   fields: [
     defineField({
       name: 'image',
@@ -46,17 +50,17 @@ export const event = defineType({
         input: DoorsOpenInput,
       },
     }),
+    // Replace "venue" in the array of fields:
     defineField({
       name: 'venue',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'venue'}]}],
-      readOnly: ({value, document}) =>
-        !value && document?.eventType === 'virtual',
+      type: 'reference',
+      to: [{type: 'venue'}],
       validation: (rule) =>
         rule.custom((value, context) => {
           if (value && context?.document?.eventType === 'virtual') {
             return 'Only in-person events can have a venue'
           }
+
           return true
         }),
     }),
@@ -97,7 +101,7 @@ export const event = defineType({
         : 'No date'
 
       return {
-        title: artists ? `${nameFormatted} (${artists})` : nameFormatted,
+        title: artists ? `${nameFormatted}` : nameFormatted,
         subtitle: venue ? `${dateFormatted} at ${venue}` : dateFormatted,
         media: image?.asset || CalendarDotsIcon,
       }
