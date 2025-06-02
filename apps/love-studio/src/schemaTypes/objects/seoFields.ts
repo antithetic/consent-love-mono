@@ -13,7 +13,10 @@ export const seoFields = defineType({
     defineField({
       name: 'description',
       type: 'text',
+      title: 'SEO Description',
       rows: 3,
+      validation: (Rule) =>
+        Rule.max(160).warning('SEO descriptions should be under 160 characters'),
     }),
     defineField({
       name: 'logo',
