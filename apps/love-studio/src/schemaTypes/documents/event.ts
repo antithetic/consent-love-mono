@@ -2,6 +2,7 @@ import {CalendarDotsIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
 import {DoorsOpenInput} from '../components/DoorsOpenInput'
+import {genreTagsField} from '../definitions/genreTagsField'
 
 export const event = defineType({
   name: 'event',
@@ -74,6 +75,10 @@ export const event = defineType({
       type: 'array',
       of: [{type: 'block'}],
     }),
+    {
+      ...genreTagsField,
+      title: 'Event Tags',
+    },
     defineField({
       name: 'tickets',
       type: 'url',
