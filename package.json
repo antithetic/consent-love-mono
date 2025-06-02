@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=love-studio\" \"npm run dev --workspace=love-astro\""
-  },
+  "dev": "concurrently \"pnpm --filter love-studio dev\" \"pnpm --filter love-astro dev\""
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",
-  "workspaces": [
-    "love-astro",
-    "love-studio"
-  ],
   "devDependencies": {
     "concurrently": "^9.1.2"
   },

@@ -1,0 +1,3 @@
+packages:
+  - 'apps/love-astro'
+  - 'apps/love-studio'
