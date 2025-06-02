@@ -46,6 +46,7 @@ export const venue = defineType({
       name: 'images',
       title: 'Venue Images',
       description: 'Add up to 5 images',
+      validation: (rule) => rule.max(5).error('Maximum 5 images allowed'),
     }),
   ],
 })
