@@ -11,7 +11,8 @@ export const event = defineType({
   fields: [
     defineField({
       name: 'image',
-      type: 'image',
+      title: 'Event Flyer',
+      type: 'imageBlock',
     }),
     defineField({
       name: 'name',
@@ -79,17 +80,11 @@ export const event = defineType({
     select: {
       name: 'name',
       venue: 'venue.name',
-      select: {
-        name: 'name',
-        venue: 'venue.name',
-        artist: 'artists.0.name',
-        date: 'date',
-        image: 'image',
-      },
+      artists: 'artists.0.name',
       date: 'date',
       image: 'image',
     },
-    prepare({name, venue, artist, date, image}) {
+    prepare({name, venue, artists, date, image}) {
       const nameFormatted = name || 'Untitled event'
       const dateFormatted = date
         ? new Date(date).toLocaleDateString(undefined, {
@@ -102,7 +97,7 @@ export const event = defineType({
         : 'No date'
 
       return {
-        title: artist ? `${nameFormatted} (${artist})` : nameFormatted,
+        title: artists ? `${nameFormatted} (${artists})` : nameFormatted,
         subtitle: venue ? `${dateFormatted} at ${venue}` : dateFormatted,
         media: image || CalendarDotsIcon,
       }

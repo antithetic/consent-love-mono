@@ -21,7 +21,7 @@ export const venue = defineType({
     defineField({
       type: 'streetAddress',
       name: 'address',
-      title: 'Venue  Address',
+      title: 'Venue Address',
     }),
     defineField({
       type: 'text',

@@ -10,12 +10,14 @@ export const member = defineType({
     defineField({
       name: 'name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'artistProfile',
       type: 'reference',
+      title: 'Artist Profile',
       description:
-        'Link,  or create, artist profile. This will be linked on the website.',
+        'Link, or create, artist profile. This will be linked on the website.',
       to: [{type: 'artist'}],
     }),
   ],

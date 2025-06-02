@@ -8,8 +8,23 @@ export const settings = defineType({
   icon: GearIcon,
   fields: [
     defineField({
-      name: 'name',
-      type: 'string',
+      name: 'site',
+      type: 'seoFields',
+      title: 'Site Settings',
     }),
   ],
+  preview: {
+    select: {
+      title: 'site.title',
+      description: 'site.description',
+      logo: 'site.logo',
+    },
+    prepare({title, description, logo}) {
+      return {
+        title: title || 'Untitled Settings',
+        subtitle: description || 'No description',
+        media: logo || GearIcon,
+      }
+    },
+  },
 })
