@@ -1,0 +1,53 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build output
+dist
+.output
+.astro
+
+# Cache
+.cache
+.temp
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Package files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Generated files
+*.min.js
+*.min.css
+*.min.html
+
+# Coverage directory
+coverage
+
+# Misc
+.git
+.github
+.gitignore 
