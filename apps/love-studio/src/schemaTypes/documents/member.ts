@@ -11,5 +11,12 @@ export const member = defineType({
       name: 'name',
       type: 'string',
     }),
+    defineField({
+      name: 'artistProfile',
+      type: 'reference',
+      description:
+        'Link,  or create, artist profile. This will be linked on the website.',
+      to: [{type: 'artist'}],
+    }),
   ],
 })

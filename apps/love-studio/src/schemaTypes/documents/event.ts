@@ -1,6 +1,8 @@
 import {CalendarDotsIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
+import {DoorsOpenInput} from '../components/doorsOpenInput'
+
 export const event = defineType({
   name: 'event',
   title: 'Event',
@@ -24,19 +26,38 @@ export const event = defineType({
     defineField({
       name: 'eventType',
       type: 'string',
+      options: {
+        list: ['in-person', 'virtual', 'hybrid'],
+        layout: 'radio',
+      },
     }),
     defineField({
       name: 'date',
       type: 'datetime',
     }),
+    // Replace "doorsOpen" in the array of fields:
     defineField({
       name: 'doorsOpen',
+      description: 'Number of minutes before the start time for admission',
       type: 'number',
+      initialValue: 60,
+      components: {
+        input: DoorsOpenInput,
+      },
     }),
     defineField({
       name: 'venue',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'venue'}]}],
+      readOnly: ({value, document}) =>
+        !value && document?.eventType === 'virtual',
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          if (value && context?.document?.eventType === 'virtual') {
+            return 'Only in-person events can have a venue'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'artists',
