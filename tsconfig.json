@@ -1,0 +1,9 @@
+{
+  "extends": "./apps/love-astro/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./apps/love-astro/src/*"]
+    }
+  }
+} 

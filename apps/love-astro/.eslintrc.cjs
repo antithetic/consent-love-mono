@@ -2,7 +2,9 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:astro/recommended',
+    'plugin:@typescript-eslint/recommended'
   ],
+  plugins: ['@typescript-eslint'],
   env: {
     node: true,
     es2022: true,
