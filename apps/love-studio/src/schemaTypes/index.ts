@@ -6,6 +6,7 @@ import {link} from './documents/link'
 import {member} from './documents/member'
 import {settings} from './documents/settings'
 import {venue} from './documents/venue'
+import {blockContent} from './objects/blockContent'
 import {contactCard} from './objects/contactCard'
 import {eventSlug} from './objects/eventSlug'
 import {imageBlock} from './objects/imageBlock'
@@ -24,6 +25,7 @@ export const schemaTypes = [
   venue,
 
   // Objects
+  blockContent,
   contactCard,
   eventSlug,
   imageBlock,
