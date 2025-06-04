@@ -4,7 +4,7 @@ interface Props {
   className?: string;
 }
 
-const { className = "" } = Astro.props;
+const { className = '' } = Astro.props;
 
 // Import images directly
 import bg1 from '../assets/bg/background-01.webp';
@@ -25,10 +25,10 @@ console.log('Selected image:', selectedImage);
 ---
 
 <div class="fixed inset-0 -z-10">
-  <img 
-    src={selectedImage.src} 
-    alt="Background" 
-    class="w-full h-full object-cover"
+  <img
+    src={selectedImage.src}
+    alt="Background"
+    class="h-full w-full object-cover"
   />
 </div>
 
