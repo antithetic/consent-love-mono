@@ -4,42 +4,49 @@ interface Props {
   className?: string;
 }
 
-const { className = '' } = Astro.props;
+const { className = "" } = Astro.props;
 
-// Import images directly
-import bg1 from '../assets/bg/background-01.webp';
-import bg2 from '../assets/bg/background-02.webp';
-import bg3 from '../assets/bg/background-03.webp';
+// Import all images from the bg folder at build time
+const images = import.meta.glob('../assets/bg/*.(png|jpg|jpeg|webp|avif)', { eager: true });
 
-const images = [bg1, bg2, bg3];
-
-// Debug log
-console.log('Available images:', images);
-
-// Randomly select an image
-const randomIndex = Math.floor(Math.random() * images.length);
-const selectedImage = images[randomIndex];
-
-// Debug log
-console.log('Selected image:', selectedImage);
+// Extract the URLs and pass them to the client
+const imageUrls = Object.values(images).map((mod: any) => mod.default);
 ---
 
-<div class="fixed inset-0 -z-10">
-  <img
-    src={selectedImage.src}
-    alt="Background"
-    class="h-full w-full object-cover"
-  />
-</div>
-
-<script>
-  // Debug log in browser
-  console.log('Background component mounted');
-</script>
-
-<script define:vars={{ className }}>
-  // Apply additional classes to body if provided
-  if (className) {
-    document.body.className += ` ${className}`;
+<style>
+  body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.3s ease-in-out;
   }
+</style>
+
+<script define:vars={{ imageUrls, className }}>
+  // Function to randomly select and apply background
+  function setRandomBackground() {
+    const randomIndex = Math.floor(Math.random() * imageUrls.length);
+    const selectedImage = imageUrls[randomIndex];
+    
+    document.body.style.backgroundImage = `url(${selectedImage})`;
+    
+    // Apply additional classes to body if provided
+    if (className && !document.body.className.includes(className)) {
+      document.body.className += ` ${className}`;
+    }
+  }
+
+  // Set random background on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setRandomBackground);
+  } else {
+    setRandomBackground();
+  }
+
+  // Optional: Change background on window focus (when user returns to tab)
+  window.addEventListener('focus', setRandomBackground);
+  
+  // Optional: Add a way to manually trigger background change
+  window.changeBackground = setRandomBackground;
 </script>
