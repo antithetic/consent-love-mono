@@ -1,5 +1,40 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
-  main {
-    @apply max-h-full;
-  }
+body {
+  font-family: 'Space Mono', monospace;
+  @apply min-h-screen p-2 md:p-4;
+}
+
+a {
+  @apply underline italic;
+}
+.container {
+  @apply flex flex-col;
+}
+header {
+  @apply mt-8;
+}
+header h1 {
+  font-family: 'Gabarito Variable', system-ui;
+  @apply underline-offset-3 grow text-8xl underline;
+}
+header p {
+  font-family: 'Rock Salt', cursive;
+  @apply mt-2 text-2xl;
+}
+
+main {
+  @apply mt-4 max-h-full;
+}
+
+section {
+  @apply my-4;
+}
+section h2 {
+  @apply  text-4xl;
+}
+
+footer {
+  @apply my-8 text-center;
+}
