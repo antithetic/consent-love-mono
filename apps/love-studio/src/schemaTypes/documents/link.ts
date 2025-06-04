@@ -32,6 +32,12 @@ export const link = defineType({
       title: 'Link Tags',
     },
     defineField({
+      name: 'date',
+      title: 'Date Added',
+      type: 'datetime',
+      initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
       name: 'openInNewTab',
       type: 'boolean',
       title: 'Open in new tab',

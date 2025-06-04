@@ -39,10 +39,28 @@ export const structure: StructureResolver = (S) =>
             .defaultOrdering([{field: 'name', direction: 'asc'}]),
         ),
       S.documentTypeListItem('venue').title('Venues').icon(FactoryIcon),
+      S.documentTypeListItem('contact')
+        .title('Contacts')
+        .icon(AddressBookTabsIcon)
+        .child(
+          S.documentList()
+            .title('Contacts')
+            .filter('_type == "contact"')
+            .defaultOrdering([{field: 'name', direction: 'asc'}]),
+        ),
       S.divider(),
-      S.documentTypeListItem('linkList').title('Link list').icon(NotepadIcon),
+      S.documentTypeListItem('linkList').title('Link List').icon(NotepadIcon),
       S.documentTypeListItem('linkCollection').title('Link Collections').icon(BookmarksIcon),
-      S.documentTypeListItem('link').title('Link Archive').icon(LinkSimpleIcon),
+      // S.documentTypeListItem('link').title('Link Archive').icon(LinkSimpleIcon),
+      S.documentTypeListItem('link')
+        .title('Link Archive')
+        .icon(LinkSimpleIcon)
+        .child(
+          S.documentList()
+            .title('Link Archive')
+            .filter('_type == "link"')
+            .defaultOrdering([{field: 'name', direction: 'asc'}]),
+        ),
       S.divider(),
       S.listItem()
         .id('about')
@@ -58,15 +76,6 @@ export const structure: StructureResolver = (S) =>
             .title('Events Archive')
             .filter('_type == "event"')
             .defaultOrdering([{field: 'date', direction: 'desc'}]),
-        ),
-      S.documentTypeListItem('contact')
-        .title('Contacts')
-        .icon(AddressBookTabsIcon)
-        .child(
-          S.documentList()
-            .title('Contacts')
-            .filter('_type == "contact"')
-            .defaultOrdering([{field: 'name', direction: 'asc'}]),
         ),
       S.documentTypeListItem('flyer').title('Flyer Archive').icon(ImagesSquareIcon),
       S.divider(),
