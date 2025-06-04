@@ -1,10 +1,13 @@
 import {
   AddressBookTabsIcon,
+  BookmarksIcon,
   CalendarDotsIcon,
   FactoryIcon,
   FileTextIcon,
   GearIcon,
   ImagesSquareIcon,
+  LinkSimpleIcon,
+  NotepadIcon,
   UserCircleGearIcon,
   UserRectangleIcon,
 } from '@phosphor-icons/react'
@@ -37,6 +40,10 @@ export const structure: StructureResolver = (S) =>
         ),
       S.documentTypeListItem('venue').title('Venues').icon(FactoryIcon),
       S.divider(),
+      S.documentTypeListItem('linkList').title('Link list').icon(NotepadIcon),
+      S.documentTypeListItem('linkCollection').title('Link Collections').icon(BookmarksIcon),
+      S.documentTypeListItem('link').title('Link Archive').icon(LinkSimpleIcon),
+      S.divider(),
       S.listItem()
         .id('about')
         .schemaType('about')
@@ -48,7 +55,7 @@ export const structure: StructureResolver = (S) =>
         .icon(CalendarDotsIcon)
         .child(
           S.documentList()
-            .title('Events')
+            .title('Events Archive')
             .filter('_type == "event"')
             .defaultOrdering([{field: 'date', direction: 'desc'}]),
         ),

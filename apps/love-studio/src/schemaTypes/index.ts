@@ -4,6 +4,8 @@ import {contact} from './documents/contact'
 import {event} from './documents/event'
 import {flyer} from './documents/flyer'
 import {link} from './documents/link'
+import {linkCollection} from './documents/linkCollection'
+import {linkList} from './documents/linkList'
 import {member} from './documents/member'
 import {settings} from './documents/settings'
 import {venue} from './documents/venue'
@@ -22,6 +24,8 @@ export const schemaTypes = [
   event,
   flyer,
   link,
+  linkCollection,
+  linkList,
   member,
   settings,
   venue,
