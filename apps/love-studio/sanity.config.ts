@@ -1,3 +1,4 @@
+import {SmileyMeltingIcon} from '@phosphor-icons/react'
 import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
@@ -12,6 +13,7 @@ import {defaultDocumentNode} from './src/structure/defaultDocumentNode'
 export default defineConfig({
   name: 'default',
   title: 'Love Hangover',
+  icon: SmileyMeltingIcon,
 
   projectId: '6ziojjbn',
   dataset: 'production',

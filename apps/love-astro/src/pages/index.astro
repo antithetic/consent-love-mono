@@ -1,13 +1,31 @@
 ---
-import Layout from "@layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from 'astro:assets';
+import clubCultureFlyer from '../assets/club-culture-2025-06-07.webp';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
-  <section>
+  <header>
     <h1>Love Hangover</h1>
     <p>QUEER. PUNK. ACID. SWEAT.</p>
-  </section>
+  </header>
+  <main>
+    <section>
+      <p>
+        <b>NEXT PARTY:</b> <br />
+        <Image
+        src={clubCultureFlyer}
+        alt="Club Culture June 7th 2025 at The Casbah"
+        class="max-w-md mx-auto block my-8"
+      />
+
+        Dream and Messy Era Present...
+        <h2>Club Culture</h2>
+         Saturday, June 7th 2025 at The Casbah <br />
+         <a href="https://wl.seetickets.us/event/club-culture/650219">Event Info + Presale Tickets</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>A party by Consent &copy; 2025</footer>
 </Layout>

@@ -15,7 +15,7 @@ export default {
   useTabs: false,
 
   // Print trailing commas wherever possible
-  trailingComma: "es5",
+  trailingComma: 'es5',
 
   // Print spaces between brackets in object literals
   bracketSpacing: true,
@@ -24,19 +24,19 @@ export default {
   bracketSameLine: false,
 
   // Always include parentheses around arrow function parameters
-  arrowParens: "always",
+  arrowParens: 'always',
 
   // Line width before wrapping
   printWidth: 100,
 
   // End of line character
-  endOfLine: "lf",
+  endOfLine: 'lf',
 
   // Format embedded code blocks
-  embeddedLanguageFormatting: "auto",
+  embeddedLanguageFormatting: 'auto',
 
   // HTML whitespace sensitivity
-  htmlWhitespaceSensitivity: "css",
+  htmlWhitespaceSensitivity: 'css',
 
   // Vue files script and style tags indentation
   vueIndentScriptAndStyle: false,
@@ -47,15 +47,15 @@ export default {
   // Override default options for specific file types
   overrides: [
     {
-      files: "*.astro",
+      files: '*.astro',
       options: {
-        parser: "astro",
+        parser: 'astro',
       },
     },
     {
-      files: "*.{ts,tsx}",
+      files: '*.{ts,tsx}',
       options: {
-        parser: "typescript",
+        parser: 'typescript',
       },
     },
   ],
