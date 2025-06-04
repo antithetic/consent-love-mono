@@ -8,9 +8,22 @@ export const linkList = defineType({
   icon: NotepadIcon,
   fields: [
     defineField({
-      name: 'name',
-      title: 'List name',
+      name: 'title',
+      title: 'Page Title',
       type: 'string',
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Website Path',
+      type: 'slug',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'collections',
+      title: 'Link Collections',
+      description: 'Add link collections here',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'linkCollection'}]}],
     }),
   ],
 })
