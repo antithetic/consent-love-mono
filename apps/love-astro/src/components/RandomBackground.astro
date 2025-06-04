@@ -1,0 +1,45 @@
+---
+// RandomBackgroundComponent.astro
+interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+
+// Import images directly
+import bg1 from '../assets/bg/background-01.webp';
+import bg2 from '../assets/bg/background-02.webp';
+import bg3 from '../assets/bg/background-03.webp';
+
+const images = [bg1, bg2, bg3];
+
+// Debug log
+console.log('Available images:', images);
+
+// Randomly select an image
+const randomIndex = Math.floor(Math.random() * images.length);
+const selectedImage = images[randomIndex];
+
+// Debug log
+console.log('Selected image:', selectedImage);
+---
+
+<div class="fixed inset-0 -z-10">
+  <img 
+    src={selectedImage.src} 
+    alt="Background" 
+    class="w-full h-full object-cover"
+  />
+</div>
+
+<script>
+  // Debug log in browser
+  console.log('Background component mounted');
+</script>
+
+<script define:vars={{ className }}>
+  // Apply additional classes to body if provided
+  if (className) {
+    document.body.className += ` ${className}`;
+  }
+</script>

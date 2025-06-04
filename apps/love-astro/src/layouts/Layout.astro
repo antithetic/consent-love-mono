@@ -2,7 +2,7 @@
 import '@fontsource-variable/gabarito';
 import '@fontsource/rock-salt';
 import '@fontsource/space-mono';
-
+import RandomBackground from '@components/RandomBackground.astro'
 import '@styles/global.css';
 ---
 
@@ -16,6 +16,7 @@ import '@styles/global.css';
     <title>LOVE HANGOVER // QUEER.PUNK.ACID.SWEAT</title>
   </head>
   <body>
+    <RandomBackground className="text-white"/>
     <div class="container mx-auto max-w-3xl">
       <slot />
     </div>
@@ -28,10 +29,5 @@ import '@styles/global.css';
     margin: 0;
     width: 100%;
   }
-  body {
-    background-image: url('../assets/background.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
 </style>
+
