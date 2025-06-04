@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Space Mono', monospace;
-  @apply min-h-screen bg-black p-2 md:p-4;
+  @apply min-h-screen bg-black px-2 md:px-4;
 }
 
 a {
@@ -13,15 +13,15 @@ a {
   @apply flex flex-col;
 }
 header {
-  @apply mt-8;
+  @apply top-0 sticky;
 }
 header h1 {
   font-family: 'Gabarito Variable', system-ui;
-  @apply underline-offset-3 grow text-8xl underline;
+  @apply underline-offset-3 pt-8 grow text-8xl underline;
 }
 header p {
   font-family: 'Rock Salt', cursive;
-  @apply mt-2 text-2xl;
+  @apply mt-2 text-xl md:text-2xl;
 }
 
 main {
@@ -36,5 +36,13 @@ section h2 {
 }
 
 footer {
-  @apply my-8 text-center;
+  @apply text-right bottom-0 sticky;
+}
+
+footer p {
+  @apply my-16;
+}
+
+span .c {
+  @apply text-2xl;
 }
