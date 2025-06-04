@@ -1,2 +1,5 @@
 @import "tailwindcss";
 
+  main {
+    @apply max-h-full;
+  }
