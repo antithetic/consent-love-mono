@@ -1,3 +1,4 @@
+import {about} from './documents/aboutPage'
 import {artist} from './documents/artist'
 import {contact} from './documents/contact'
 import {event} from './documents/event'
@@ -15,6 +16,7 @@ import {streetAddress} from './objects/streetAddress'
 
 export const schemaTypes = [
   // Documents
+  about,
   artist,
   contact,
   event,
