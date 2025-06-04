@@ -16,7 +16,6 @@ export const linkList = defineType({
       name: 'slug',
       title: 'Website Path',
       type: 'slug',
-      readOnly: true,
     }),
     defineField({
       name: 'collections',

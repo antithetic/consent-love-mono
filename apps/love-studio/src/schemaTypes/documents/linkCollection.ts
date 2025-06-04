@@ -51,11 +51,4 @@ export const linkCollection = defineType({
       media: 'icon',
     },
   },
-  orderings: [
-    {
-      title: 'Display Order',
-      name: 'displayOrder',
-      by: [{field: 'order', direction: 'asc'}],
-    },
-  ],
 })

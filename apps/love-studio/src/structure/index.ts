@@ -51,7 +51,6 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
       S.documentTypeListItem('linkList').title('Link List').icon(NotepadIcon),
       S.documentTypeListItem('linkCollection').title('Link Collections').icon(BookmarksIcon),
-      // S.documentTypeListItem('link').title('Link Archive').icon(LinkSimpleIcon),
       S.documentTypeListItem('link')
         .title('Link Archive')
         .icon(LinkSimpleIcon)
