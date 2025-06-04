@@ -7,19 +7,20 @@ import Layout from '@layouts/Layout.astro';
 <Layout>
   <header>
     <h1>Love Hangover</h1>
-    <p>QUEER. PUNK. ACID. SWEAT.</p>
+    <p class="tagline">QUEER. PUNK. ACID. SWEAT.</p>
+    <p class="next">
+      <b>NEXT PARTY:</b>
+    </p>
   </header>
+
   <main>
     <section>
+      <Image
+        src={clubCultureFlyer}
+        alt="Club Culture June 7th 2025 at The Casbah"
+        class="mx-auto my-8 block max-w-sm"
+      />
       <p>
-        <b>NEXT PARTY:</b>
-        <br />
-        <Image
-          src={clubCultureFlyer}
-          alt="Club Culture June 7th 2025 at The Casbah"
-          class="mx-auto my-8 block max-w-sm"
-        />
-
         Dream and Messy Era Present...
         <h2>Club Culture</h2>
         Saturday, June 7th 2025 at The Casbah <br />
