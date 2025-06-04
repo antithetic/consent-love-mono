@@ -4,6 +4,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {media} from 'sanity-plugin-media'
+import {singletonTools} from 'sanity-plugin-singleton-tools'
 import {tags} from 'sanity-plugin-tags'
 
 import {schemaTypes} from './src/schemaTypes'
@@ -23,6 +24,7 @@ export default defineConfig({
     visionTool(),
     media(),
     imageAssetPickerPlugin(),
+    singletonTools(),
     tags(),
   ],
 

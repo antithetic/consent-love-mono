@@ -1,10 +1,10 @@
-import {PhoneIcon} from '@phosphor-icons/react'
+import {AddressBookTabsIcon} from '@phosphor-icons/react'
 import {defineField, defineType} from 'sanity'
 
 export const contact = defineType({
   name: 'contact',
   type: 'document',
-  icon: PhoneIcon,
+  icon: AddressBookTabsIcon,
   fields: [
     defineField({
       name: 'name',
