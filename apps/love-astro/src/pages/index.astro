@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import clubCultureFlyer from '../assets/club-culture-2025-06-07.webp';
-import Layout from '@layouts/Layout.astro';
+import clubCultureFlyer from '../assets/club-culture-2025-06-07.webp'
+import Layout from '@layouts/Layout.astro'
+import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
 ---
 
 <Layout>
@@ -32,8 +33,9 @@ import Layout from '@layouts/Layout.astro';
   </main>
 
   <footer>
-    <p>
-      A party by Consent <span class="copy">&copy; </span> 2025
-    </p>
+    
+      <div>A party by Consent &copy; 2025</div>
+    <div class="links">follow us ~ <a href="https://instagram.com/love.hangover.sd" target="_blank" ><InstagramLogo class="icon" /></a></div>
+    
   </footer>
 </Layout>

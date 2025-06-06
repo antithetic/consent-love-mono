@@ -39,7 +39,7 @@ section h2 {
 }
 
 footer {
-  @apply sticky bottom-0 text-right;
+  @apply sticky bottom-0 flex flex-col text-right pb-12 mb-24;
 }
 
 footer p {
@@ -48,4 +48,8 @@ footer p {
 
 span .c {
   @apply text-2xl;
+}
+
+.links .icon {
+  @apply w-6 h-6 inline-block hover:bg-yellow-300 hover:fill-black;
 }
