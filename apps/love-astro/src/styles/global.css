@@ -39,7 +39,7 @@ section h2 {
 }
 
 footer {
-  @apply sticky bottom-0 flex flex-col text-right pb-12 mb-24;
+  @apply sticky bottom-0 flex flex-col text-right pb-12;
 }
 
 footer p {
