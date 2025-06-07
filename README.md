@@ -9,7 +9,9 @@ consent-love-mono/
 ├── apps/
 │   ├── love-studio/     # Sanity Studio CMS
 │   └── love-astro/      # Astro-based frontend
-├── packages/            # Shared packages (if any)
+├── packages/            # Shared packages
+│   ├── ui/             # Shared UI components and styles
+│   └── sharedSchema/   # Shared Sanity schema definitions
 └── pnpm-workspace.yaml  # PNPM workspace configuration
 ```
 
