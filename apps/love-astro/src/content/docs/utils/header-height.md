@@ -19,7 +19,15 @@ The Header Height Utility (`headerHeight.ts`) provides dynamic management of the
 #### `updateHeaderHeight()`
 
 ```typescript
-export function updateHeaderHeight(): void
+export function updateHeaderHeight(): void{
+const header = document.querySelector('header');
+if (!header) return;
+const { height, top } = header.getBoundingClientRect();
+document.documentElement.style.setProperty(
+  '--header-height',
+  `${height + top}px`
+);
+}
 ```
 
 Calculates the current header height and updates the CSS variable:
