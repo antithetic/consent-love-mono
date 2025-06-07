@@ -8,6 +8,7 @@
 export function updateHeaderHeight(): void {
   const header = document.querySelector('header')
   if (!header) return
+  
 
   // Get the actual height of the header including margins and padding
   const headerHeight = header.getBoundingClientRect().height
