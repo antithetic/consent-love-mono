@@ -22,12 +22,10 @@ A flexible Astro component for embedding Spotify playlists with TypeScript suppo
 ### Using a Spotify Share URL
 
 ```astro
-
 import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
----
 
 <SpotifyPlaylist
-  playlistUrl="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
+playlistUrl="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
 />
 ```
 
@@ -43,8 +41,8 @@ import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 | ---------------- | -------------------- | --------------------------------- | -------------------------------------- |
 | `playlistId`     | `string?`            | -                                 | Direct Spotify playlist ID             |
 | `playlistUrl`    | `string?`            | -                                 | Full Spotify playlist share URL        |
-| `width?`          | `number \| string`  | `352` (full) / `"100%"` (compact) | Width of the embed                     |
-| `height?`         | `number \| string`  | `632` (full) / `152` (compact)    | Height of the embed                    |
+| `width?`         | `number \| string`   | `352` (full) / `"100%"` (compact) | Width of the embed                     |
+| `height?`        | `number \| string`   | `632` (full) / `152` (compact)    | Height of the embed                    |
 | `theme`          | `'light' \| 'dark'?` | `'dark'`                          | Spotify embed theme                    |
 | `showCoverArt`   | `boolean?`           | `true`                            | Whether to display playlist cover art  |
 | `compact`        | `boolean?`           | `false`                           | Use compact embed mode                 |

@@ -1,5 +1,6 @@
 ---
 import clubCultureFlyer from '@assets/club-culture-2025-06-07.webp'
+import FixedSection from '@components/FixedSection.astro'
 import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
@@ -10,13 +11,11 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
   <header>
     <h1>Love Hangover</h1>
     <p class="tagline">QUEER. PUNK. ACID. SWEAT.</p>
-    <p class="next">
-      <b>NEXT PARTY:</b>
-    </p>
   </header>
 
   <main>
-    <section class="events">
+    <!-- <
+    section class="events">
       <Image
         src={clubCultureFlyer}
         alt="Club Culture June 7th 2025 at The Casbah"
@@ -30,7 +29,22 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
           >Event Info + Presale Tickets</a
         >
       </p>
-    </section>
+    </section> -->
+    <FixedSection headerText="Next Party:">
+      <Image
+        src={clubCultureFlyer}
+        alt="Club Culture June 7th 2025 at The Casbah"
+        class="mx-auto my-8 block max-w-sm"
+      />
+      <p>
+        Dream and Messy Era Present...
+        <h2>Club Culture</h2>
+        Saturday, June 7th 2025 at The Casbah <br />
+        <a href="https://wl.seetickets.us/event/club-culture/650219"
+          >Event Info + Presale Tickets</a
+        >
+      </p>
+    </FixedSection>
     <section class="playlist">
       <b>CHECK OUT OUR PLAYLIST:</b>
       <h2>Love Hangover Spring Summer 2025</h2>
