@@ -23,19 +23,7 @@ export function updateHeaderHeight(): void {
  * - Updates height on resize
  * - Updates height on orientation change
  */
-export function initHeaderHeight(): void {
-  // Initial update
-  updateHeaderHeight()
-
-  // Update on resize
-  window.addEventListener('resize', updateHeaderHeight)
-
-  // Update on orientation change (for mobile devices)
-  window.addEventListener('orientationchange', () => {
-    // Small delay to ensure the DOM has updated
-    setTimeout(updateHeaderHeight, 100)
-  })
-}
+// (the duplicate initHeaderHeight declaration has been removed)
 
 /**
  * Cleans up header height event listeners
