@@ -7,7 +7,10 @@ body {
 }
 
 a {
-  @apply italic underline;
+  @apply px-1 italic underline;
+}
+a:hover {
+  @apply bg-lime-400 text-black;
 }
 .container {
   @apply flex flex-col;
@@ -31,9 +34,6 @@ main {
   @apply max-h-full;
 }
 
-section {
-  @apply mb-4;
-}
 section h2 {
   @apply text-4xl;
 }
@@ -49,7 +49,27 @@ footer p {
 span .c {
   @apply text-2xl;
 }
-
+.links a:hover {
+  @apply bg-transparent;
+}
 .links .icon {
   @apply inline-block h-6 w-6 hover:bg-yellow-300 hover:fill-black;
+}
+
+.events {
+  @apply mb-36;
+}
+.playlist {
+  @apply mb-26;
+}
+.playlist_info {
+  @apply max-w-3/4 mx-auto my-6;
+}
+
+.playlist_info p {
+  @apply mb-6 max-w-[65ch];
+}
+
+.embed {
+  @apply max-w-3/4 mx-auto my-6 py-6;
 }

@@ -3,6 +3,12 @@ import Lenis from 'lenis'
 let lenis: Lenis | null = null
 let animationId: number | null = null
 
+/**
+ * Initializes the Lenis smooth scrolling instance with custom configuration.
+ * Sets up the animation frame loop for smooth scrolling.
+ *
+ * @returns {Lenis | undefined} The initialized Lenis instance or undefined if running on server
+ */
 export function initLenis() {
   if (typeof window === 'undefined') return
 
@@ -24,10 +30,19 @@ export function initLenis() {
   return lenis
 }
 
+/**
+ * Retrieves the current Lenis instance.
+ *
+ * @returns {Lenis | null} The current Lenis instance or null if not initialized
+ */
 export function getLenis() {
   return lenis
 }
 
+/**
+ * Destroys the current Lenis instance and cleans up animation frames.
+ * Should be called before reinitializing or when component unmounts.
+ */
 export function destroyLenis() {
   if (animationId) {
     cancelAnimationFrame(animationId)

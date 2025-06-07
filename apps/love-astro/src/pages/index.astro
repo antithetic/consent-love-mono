@@ -1,9 +1,9 @@
 ---
+import clubCultureFlyer from '@assets/club-culture-2025-06-07.webp'
+import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
-
-import clubCultureFlyer from '../assets/club-culture-2025-06-07.webp'
 ---
 
 <Layout>
@@ -16,7 +16,7 @@ import clubCultureFlyer from '../assets/club-culture-2025-06-07.webp'
   </header>
 
   <main>
-    <section>
+    <section class="events">
       <Image
         src={clubCultureFlyer}
         alt="Club Culture June 7th 2025 at The Casbah"
@@ -30,6 +30,33 @@ import clubCultureFlyer from '../assets/club-culture-2025-06-07.webp'
           >Event Info + Presale Tickets</a
         >
       </p>
+    </section>
+    <section class="playlist">
+      <b>CHECK OUT OUR PLAYLIST:</b>
+      <h2>Love Hangover Spring Summer 2025</h2>
+      <div class="playlist_info">
+        <p>
+          120 minutes featuring a slice of Love Hangover’s most intoxicating &
+          dangerous cuts. Some secrets are meant to be heard. Curated by <a
+            href="https://instagram.com/_https://www.instagram.com/lola_rey_/"
+            target="_blank">Miss Lady D</a
+          > & <a href="https://www.instagram.com/antithetic" target="_blank"
+            >Filoso</a
+          >.
+        </p>
+        <p>
+          Listen on Spotify [<a
+            href="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
+            target="_blank">LINK</a
+          >]
+        </p>
+      </div>
+      <div class="embed">
+        <SpotifyPlaylist
+          playlistUrl="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
+          compact={true}
+        />
+      </div>
     </section>
   </main>
 
