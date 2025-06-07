@@ -11,7 +11,11 @@ a {
 }
 
 a:hover {
-  @apply bg-lime-400 text-black;
+  @apply bg-lime-400 text-black transition-colors duration-200;
+}
+
+a:focus-visible {
+  @apply outline-none ring-2 ring-lime-400 ring-offset-2 ring-offset-black;
 }
 
 /* Header  styles */
@@ -35,7 +39,7 @@ main {
   @apply relative mx-auto max-w-3xl;
 }
 
-/* / */
+/* Base fixed section styles */
 .fixed-section {
   @apply flex flex-col;
 }
