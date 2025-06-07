@@ -7,7 +7,7 @@
  */
 export function updateHeaderHeight(): void {
   const header = document.querySelector('header')
-  if (!header) {
+  if (!header || !document.documentElement) {
     console.warn('Header element not found. Header height will not be updated.')
     return
   }
