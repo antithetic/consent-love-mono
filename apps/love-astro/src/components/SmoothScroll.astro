@@ -1,4 +1,17 @@
 ---
-name: 'Smooth Scroll'
-// smooth scroll functionality utilizing lenis
+import 'lenis/dist/lenis.css'
 ---
+
+<script>
+  import { initLenis } from '@utils/lenis'
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    initLenis()
+  })
+
+  // Reinitialize on view transitions (if using)
+  document.addEventListener('astro:page-load', () => {
+    initLenis()
+  })
+</script>

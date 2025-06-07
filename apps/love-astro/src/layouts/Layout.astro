@@ -1,11 +1,12 @@
 ---
-import 'lenis/dist/lenis.css'
+/// <reference types="astro/client" />
 import '@fontsource-variable/gabarito'
 import '@fontsource/rock-salt'
 import '@fontsource/space-mono'
 import '@styles/global.css'
 
 import RandomBackground from '@components/RandomBackground.astro'
+import SmoothScroll from '@components/SmoothScroll.astro'
 ---
 
 <!doctype html>
@@ -16,6 +17,7 @@ import RandomBackground from '@components/RandomBackground.astro'
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>LOVE HANGOVER // QUEER.PUNK.ACID.SWEAT</title>
+    <SmoothScroll />
   </head>
   <body>
     <RandomBackground className="text-white" />
