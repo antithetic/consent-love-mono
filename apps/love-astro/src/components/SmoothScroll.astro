@@ -1,0 +1,25 @@
+---
+import 'lenis/dist/lenis.css'
+---
+
+<script>
+  import { destroyLenis,initLenis } from '@utils/lenis'
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      initLenis()
+    } catch (error) {
+      console.warn('Failed to initialize smooth scrolling:', error)
+    }
+  })
+
+  // Reinitialize on Astro page navigation
+  document.addEventListener('astro:page-load', () => {
+    try {
+      destroyLenis(), initLenis()
+    } catch (error) {
+      console.warn('Failed to initialize smooth scrolling:', error)
+    }
+  })
+</script>
