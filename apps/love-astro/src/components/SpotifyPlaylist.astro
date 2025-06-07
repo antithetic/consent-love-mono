@@ -57,7 +57,10 @@ function extractPlaylistId(url: string): string {
   // Strip everything from "?" onward first
   const cleanUrl = url.split('?')[0]
   const match = cleanUrl.match(/playlist\/([a-zA-Z0-9]+)/)
-  return match ? match[1] : url
+  if (!match) {
+    throw new Error(`Invalid Spotify playlist URL: ${url}`)
+  }
+  return match[1]
 }
 
 // Extract playlist ID from URL or use provided ID
