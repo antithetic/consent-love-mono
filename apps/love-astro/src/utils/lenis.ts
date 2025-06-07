@@ -40,7 +40,8 @@ export function getLenis() {
 }
 
 /**
- * Destroys the current Lenis instance and cleans up animation frames.
+ 
+ * Destroys the current Lenis instance and Cleans up the Lenis instance and animation frames. It should be called before reinitializing or when the component unmounts.
  * Should be called before reinitializing or when component unmounts.
  */
 export function destroyLenis() {
