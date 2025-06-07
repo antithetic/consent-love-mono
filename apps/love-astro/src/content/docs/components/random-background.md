@@ -28,8 +28,7 @@ The `RandomBackground` component is responsible for:
 
 ### Randomization
 
-- Randomly selects a background image on initial page load
-- Configurable periodic background changes through the `changeInterval` prop
+- Random and configurable periodic background changes via the `changeInterval` prop
 - Seamless image switching without page reload
 
 ## Usage
@@ -67,8 +66,11 @@ To add new background images:
 Example:
 
 ```astro
-import newBg from '@assets/bg/background-04.webp' const imageUrls = [ bg1.src,
-bg2.src, bg3.src, newBg.src, ]
+import newBg from '@assets/bg/background-04.webp'
+```
+
+```astro
+const imageUrls = [ bg1.src, bg2.src, bg3.src, newBg.src, ]
 ```
 
 ### Periodic Background Changes
@@ -127,11 +129,11 @@ A planned enhancement will allow the component to automatically load and manage 
 
    - Use Astro's `import.meta.glob` to dynamically import all images from the bg directory
    - Filter for supported image formats (WebP, PNG, JPG)
-   - Create a utility function to handle the file loading
+   - Create a utility function to handle the file loading in `src/utils/backgroundLoader.ts`
 
 2. **Component Updates**
 
-   - Modify the component to use dynamic imports
+   - Modify `src/components/RandomBackground.astro` to use dynamic imports
    - Add error handling for missing or invalid images
    - Implement a fallback to default images if the directory is empty
 
@@ -143,7 +145,7 @@ A planned enhancement will allow the component to automatically load and manage 
 #### Example Implementation Structure
 
 ```typescript
-// Utility function for loading background images
+// src/utils/backgroundLoader.ts
 async function loadBackgroundImages() {
   const images = import.meta.glob('@assets/bg/*.{webp,png,jpg,jpeg}')
   const loadedImages = []
@@ -156,17 +158,17 @@ async function loadBackgroundImages() {
   return loadedImages
 }
 
-// Component usage
+// src/components/RandomBackground.astro
 <RandomBackground autoLoad={true} />
 ```
 
 #### Tasks Checklist
 
-- [ ] Create utility function for dynamic image loading
+- [ ] Create utility function for dynamic image loading in `src/utils/backgroundLoader.ts`
 - [ ] Add support for multiple image formats
 - [ ] Implement error handling and fallbacks
 - [ ] Add image preloading mechanism
-- [ ] Update component props to support auto-loading
+- [ ] Update `src/components/RandomBackground.astro` props to support auto-loading
 - [ ] Add documentation for new features
 - [ ] Create tests for dynamic loading
 - [ ] Add performance benchmarks
@@ -177,7 +179,7 @@ async function loadBackgroundImages() {
 
 1. **File Organization**
 
-   - Keep all background images in the `@assets/bg/` directory
+   - Keep all background images in the `src/assets/bg/` directory
    - Use consistent naming convention (e.g., `background-01.webp`)
    - Include the image dimensions in the filename (e.g., `background-01-1920x1080.webp`)
 
@@ -196,13 +198,17 @@ async function loadBackgroundImages() {
    │       ├── background-01.webp
    │       ├── background-02.webp
    │       └── ...
+   ├── components/
+   │   └── RandomBackground.astro
+   └── utils/
+       └── backgroundLoader.ts
    ```
 
 #### Migration Guide
 
 When implementing this feature, existing code will need to be updated:
 
-1. Remove manual image imports
+1. Remove manual image imports from `src/components/RandomBackground.astro`
 2. Update component props to include `autoLoad` option
 3. Update any custom image URL arrays to use the new loading mechanism
 4. Test with various image formats and sizes

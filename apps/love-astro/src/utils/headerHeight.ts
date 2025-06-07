@@ -60,7 +60,10 @@ export function initHeaderHeight(): void {
           try {
             updateHeaderHeight()
           } catch (error) {
-            console.error('Error updating header height after orientation change:', error)
+            console.error(
+              'Error updating header height after orientation change:',
+              error,
+            )
           }
         }, 100)
       } catch (error) {
