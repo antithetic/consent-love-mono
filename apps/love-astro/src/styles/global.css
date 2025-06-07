@@ -89,7 +89,7 @@ main {
 }
 
 .playlist-tagline {
-  @apply block pl-3;
+  @apply px-6 py-2 bg-black/25;
 }
 
 /* footer: copyright and instagram link */
