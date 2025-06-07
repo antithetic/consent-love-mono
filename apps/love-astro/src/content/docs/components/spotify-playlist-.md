@@ -158,18 +158,18 @@ The component uses modern iframe features:
 
 ### Common Issues
 
-**"Either playlistId or playlistUrl must be provided" Error**
+#### "Either playlistId or playlistUrl must be provided" Error
 
 - Ensure you pass either `playlistId` or `playlistUrl` prop
 - Check that your playlist URL is valid
 
-**Playlist Not Loading**
+#### Playlist Not Loading
 
 - Verify the playlist is public (private playlists won't embed)
 - Check that the playlist ID is correct
 - Ensure the playlist still exists on Spotify
 
-**Styling Issues**
+#### Styling Issues
 
 - Remember that iframe styling can be limited by browser security
 - Use `containerClass` for outer styling, `class` for iframe-specific styles
