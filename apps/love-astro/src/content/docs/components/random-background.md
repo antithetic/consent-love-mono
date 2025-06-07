@@ -57,8 +57,13 @@ To add new background images:
 Example:
 
 ```astro
-import newBg from '@assets/bg/background-04.webp' const imageUrls = [bg1.src,
-bg2.src, bg3.src, newBg.src]
+import newBg from '@assets/bg/background-04.webp'
+const imageUrls = [
+  bg1.src,
+  bg2.src,
+  bg3.src,
+  newBg.src,
+]
 ```
 
 ### Periodic Background Changes
