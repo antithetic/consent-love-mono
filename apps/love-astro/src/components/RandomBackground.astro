@@ -18,7 +18,12 @@ const imageUrls = [bg1.src, bg2.src, bg3.src]
 ---
 
 <div id="random-background" class="fixed inset-0 -z-10">
-  <img src={imageUrls[0]} alt="" aria-hidden="true" class="h-full w-full object-cover" />
+  <img
+    src={imageUrls[0]}
+    alt=""
+    aria-hidden="true"
+    class="h-full w-full object-cover"
+  />
 </div>
 
 <script define:vars={{ imageUrls }}>
@@ -37,6 +42,6 @@ const imageUrls = [bg1.src, bg2.src, bg3.src]
   setRandomBackground()
 
   // Optional: Change background periodically
-  // setInterval(setRandomBackground, 5000); 
+  // setInterval(setRandomBackground, 5000);
   // // Uncomment to change every 5 seconds
 </script>

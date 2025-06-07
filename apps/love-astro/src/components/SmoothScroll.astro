@@ -24,8 +24,8 @@ import 'lenis/dist/lenis.css'
   // Reinitialize on Astro page navigation
   document.addEventListener('astro:page-load', () => {
     try {
-      destroyLenis();
-       initLenis();
+      destroyLenis()
+      initLenis()
     } catch (error) {
       console.warn('Failed to initialize smooth scrolling:', error)
     }
