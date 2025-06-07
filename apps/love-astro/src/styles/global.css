@@ -9,6 +9,7 @@ body {
 a {
   @apply px-1 italic underline;
 }
+
 a:hover {
   @apply bg-lime-400 text-black;
 }
@@ -17,10 +18,12 @@ a:hover {
 header {
   @apply sticky top-0 z-20 mx-auto max-w-3xl;
 }
+
 header h1 {
   font-family: 'Gabarito Variable', system-ui;
   @apply underline-offset-3 grow pt-8 text-8xl underline;
 }
+
 header .tagline {
   font-family: 'Rock Salt', cursive;
   @apply mt-2 text-xl md:text-2xl;
@@ -31,15 +34,13 @@ main {
   @apply relative mx-auto max-w-3xl;
 }
 
-
-
 /* / */
 .fixed-section {
   @apply flex flex-col;
 }
 
 .fixed-section__header {
-  @apply sticky z-10  top-[18rem] uppercase  font-bold underline tracking-widest underline-offset-1 decoration-1 decoration-wavy;
+  @apply sticky top-[18rem] z-10 font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
 }
 
 .fixed-section__content {
@@ -52,13 +53,14 @@ main {
 
 /* Next party classes */
 .next--party--info {
-  @apply  mb-24;
+  @apply mb-24;
 }
 
 /* playlist classes */
 .playlist {
   @apply mb-[6rem];
 }
+
 .playlist--header {
   @apply bg-none;
 }
@@ -68,7 +70,7 @@ main {
 }
 
 .playlist--info {
-  @apply mx-auto my-12 flex flex-col space-y-6  max-w-full md:max-w-[75%];
+  @apply mx-auto my-12 flex max-w-full flex-col space-y-6 md:max-w-[75%];
 }
 
 .playlist--embed {
@@ -77,16 +79,17 @@ main {
 
 /* footer: copyright and instagram link */
 footer {
-  @apply text-center md:sticky md:bottom-0 flex flex-col pb-12 md:text-right;
+  @apply flex flex-col pb-12 text-center md:sticky md:bottom-0 md:text-right;
 }
 
 footer p {
   @apply my-16;
 }
+
 .links a:hover {
   @apply bg-transparent;
 }
+
 .links .icon {
   @apply inline-block h-6 w-6 hover:bg-yellow-300 hover:fill-black;
 }
-
