@@ -27,11 +27,9 @@ header .tagline {
   font-family: 'Rock Salt', cursive;
   @apply mt-2 text-xl md:text-2xl;
 }
-header .next {
-  @apply z-50 pt-8;
-}
+
 main {
-  @apply relative;
+  @apply relative max-w-3xl mx-auto;
 }
 
 section h2 {
@@ -76,14 +74,14 @@ span .c {
 
 /* / */
 .fixed-section {
-  @apply relative flex flex-col;
+  @apply  flex flex-col;
 }
 
 .fixed-section__header {
-  @apply sticky top-0 z-10;
-  top: calc(theme('spacing.8') + theme('spacing.8') + theme('fontSize.8xl'));
+  @apply sticky  z-10;
+  top: calc(theme('spacing.8') + theme('spacing.12') + theme('fontSize.8xl'));
 }
 
 .fixed-section__content {
-  @apply relative;
+  @apply relative my-12;
 }
