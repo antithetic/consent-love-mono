@@ -20,7 +20,7 @@ a:focus-visible {
 
 /* Header  styles */
 header {
-  @apply sticky top-0 z-20 mx-auto  max-w-3xl;
+  @apply sticky top-0 z-20 mx-auto max-w-3xl;
   --header-height: 24rem; /* Default value that can be overridden */
 }
 
@@ -31,7 +31,7 @@ header h1 {
 
 header .tagline {
   font-family: 'Rock Salt', cursive;
-  @apply mt-2 text-xl md:text-2xl pb-16;
+  @apply mt-2 pb-16 text-xl md:text-2xl;
 }
 
 /* Main contasiner */
@@ -59,8 +59,8 @@ main {
 
 /* Next party classes */
 .next-party-flyer {
-  @apply mx-auto block mt-12 max-w-sm;
- }
+  @apply mx-auto mt-12 block max-w-sm;
+}
 
 .next-party-info {
   @apply mb-24;

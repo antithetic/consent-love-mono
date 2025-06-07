@@ -67,13 +67,8 @@ To add new background images:
 Example:
 
 ```astro
-import newBg from '@assets/bg/background-04.webp'
-const imageUrls = [
-  bg1.src,
-  bg2.src,
-  bg3.src,
-  newBg.src,
-]
+import newBg from '@assets/bg/background-04.webp' const imageUrls = [ bg1.src,
+bg2.src, bg3.src, newBg.src, ]
 ```
 
 ### Periodic Background Changes
@@ -129,11 +124,13 @@ A planned enhancement will allow the component to automatically load and manage 
 #### Implementation Roadmap
 
 1. **File System Integration**
+
    - Use Astro's `import.meta.glob` to dynamically import all images from the bg directory
    - Filter for supported image formats (WebP, PNG, JPG)
    - Create a utility function to handle the file loading
 
 2. **Component Updates**
+
    - Modify the component to use dynamic imports
    - Add error handling for missing or invalid images
    - Implement fallback to default images if directory is empty
@@ -150,12 +147,12 @@ A planned enhancement will allow the component to automatically load and manage 
 async function loadBackgroundImages() {
   const images = import.meta.glob('@assets/bg/*.{webp,png,jpg,jpeg}')
   const loadedImages = []
-  
+
   for (const path in images) {
     const image = await images[path]()
     loadedImages.push(image.default)
   }
-  
+
   return loadedImages
 }
 
@@ -179,11 +176,13 @@ async function loadBackgroundImages() {
 #### Best Practices for Image Management
 
 1. **File Organization**
+
    - Keep all background images in the `@assets/bg/` directory
    - Use consistent naming convention (e.g., `background-01.webp`)
    - Include image dimensions in filename (e.g., `background-01-1920x1080.webp`)
 
 2. **Image Requirements**
+
    - Use WebP format for optimal performance
    - Maintain consistent aspect ratios
    - Optimize images for web use

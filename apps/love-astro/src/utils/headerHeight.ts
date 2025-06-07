@@ -8,14 +8,16 @@
 export function updateHeaderHeight(): void {
   const header = document.querySelector('header')
   if (!header) return
-  
 
   // Get the actual height of the header including margins and padding
   const headerHeight = header.getBoundingClientRect().height
   const headerTop = header.getBoundingClientRect().top
 
   // Update the CSS variable with the calculated height
-  document.documentElement.style.setProperty('--header-height', `${headerHeight + headerTop}px`)
+  document.documentElement.style.setProperty(
+    '--header-height',
+    `${headerHeight + headerTop}px`,
+  )
 }
 
 /**

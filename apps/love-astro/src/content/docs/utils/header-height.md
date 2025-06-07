@@ -23,6 +23,7 @@ export function updateHeaderHeight(): void
 ```
 
 Calculates the current header height and updates the CSS variable:
+
 - Measures actual header element height using `getBoundingClientRect()`
 - Includes margins and padding in calculations
 - Updates the `--header-height` CSS variable
@@ -34,6 +35,7 @@ export function initHeaderHeight(): void
 ```
 
 Initializes header height management:
+
 - Performs initial height calculation
 - Sets up resize event listener
 - Configures orientation change handling for mobile devices
@@ -45,6 +47,7 @@ export function cleanupHeaderHeight(): void
 ```
 
 Cleans up event listeners:
+
 - Removes resize listener
 - Removes orientation change listener
 - Called during page navigation
@@ -87,6 +90,7 @@ header {
 ### Height Calculation
 
 The utility calculates the total header height by:
+
 1. Getting the header element's bounding rectangle
 2. Including both height and top offset
 3. Converting to pixels for precise positioning
@@ -94,6 +98,7 @@ The utility calculates the total header height by:
 ### Event Handling
 
 The utility manages three main events:
+
 1. **Initial Load**: Calculates height when page loads
 2. **Resize**: Updates height when window size changes
 3. **Orientation Change**: Updates height on mobile device rotation
@@ -101,7 +106,7 @@ The utility manages three main events:
 ### Performance Considerations
 
 - Uses `getBoundingClientRect()` for accurate measurements
-- Implements debouncing for resize events
+- Handles resize events directly (consider adding debouncing for performance)
 - Includes small delay for orientation changes to ensure DOM updates
 - Properly cleans up event listeners to prevent memory leaks
 
@@ -124,6 +129,7 @@ The utility manages three main events:
 ### Header Height Not Updating
 
 If the header height isn't updating properly:
+
 1. Check if the header element exists in the DOM
 2. Verify CSS variable is being set correctly
 3. Ensure no CSS is overriding the variable
@@ -131,6 +137,7 @@ If the header height isn't updating properly:
 ### Mobile Issues
 
 For mobile-specific problems:
+
 1. Test on different devices and orientations
 2. Check if orientation change handler is firing
 3. Verify timing of height updates
@@ -138,6 +145,7 @@ For mobile-specific problems:
 ### Performance Issues
 
 If experiencing performance problems:
+
 1. Monitor resize event frequency
 2. Check for memory leaks
 3. Verify cleanup is working properly
@@ -158,14 +166,15 @@ updateHeaderHeight()
 
 ## Related Components
 
-- `Layout.astro`: Main layout component using the utility
-- `FixedSection.astro`: Components that depend on header height
-- `global.css`: CSS variables and styling
+- `Layout.astro` - Main layout component using the utility
+- `FixedSection.astro` - Components that depend on header height
+- `global.css` - CSS variables and styling
 
 ## Future Improvements
 
 Potential enhancements:
-- Add debouncing for resize events
-- Implement height change animations
-- Add support for multiple header elements
-- Create a React/Vue version for other frameworks 
+
+- Add debouncing for resize events to improve performance
+- Implement smooth height change animations during transitions
+- Add support for multiple header elements or complex header structures
+- Create framework-agnostic versions for React/Vue applications
