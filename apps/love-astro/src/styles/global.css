@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-  @apply bg-lime-400 text-black transition-colors duration-400;
+  @apply duration-400 bg-lime-400 text-black transition-colors;
 }
 
 a:focus-visible {
@@ -26,7 +26,7 @@ header {
 
 header h1 {
   font-family: 'Gabarito Variable', system-ui;
-  @apply underline-offset-3 grow pt-8 text-8xl underline;
+  @apply underline-offset-3 grow pt-8 text-6xl underline md:text-8xl;
 }
 
 header .tagline {
@@ -45,7 +45,7 @@ main {
 }
 
 .fixed-section__header {
-  @apply sticky z-10 font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
+  @apply sticky z-10 text-xl font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
   top: var(--header-height);
 }
 
@@ -54,7 +54,7 @@ main {
 }
 
 .fixed-section__content h2 {
-  @apply text-3xl;
+  @apply text-4xl;
 }
 
 /* Next party classes */
@@ -76,7 +76,7 @@ main {
 }
 
 .playlist-title {
-  @apply bg-none;
+  @apply italic;
 }
 
 .playlist-info {
@@ -97,13 +97,13 @@ footer p {
 }
 
 .links a:hover {
-  @apply bg-transparent ;
+  @apply bg-transparent;
 }
 
 .links .icon {
-  @apply inline-block h-6 w-6 hover:bg-lime-400 hover:fill-black ;
-} 
+  @apply inline-block h-6 w-6 hover:bg-lime-400 hover:fill-black;
+}
 
 .links .icon:hover {
-  @apply transition-colors duration-400;
+  @apply duration-400 transition-colors;
 }
