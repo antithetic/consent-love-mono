@@ -38,7 +38,7 @@ To use the random background on your Astro page:
 
 ```astro
 ---
-import RandomBackground from '../components/RandomBackground.astro'
+import RandomBackground from '@components/RandomBackground.astro'
 ---
 
 <RandomBackground />
