@@ -16,7 +16,8 @@ a:hover {
 
 /* Header  styles */
 header {
-  @apply sticky top-0 z-20 mx-auto max-w-3xl;
+  @apply sticky top-0 z-20 mx-auto  max-w-3xl;
+  --header-height: 24rem; /* Default value that can be overridden */
 }
 
 header h1 {
@@ -26,7 +27,7 @@ header h1 {
 
 header .tagline {
   font-family: 'Rock Salt', cursive;
-  @apply mt-2 text-xl md:text-2xl;
+  @apply mt-2 text-xl md:text-2xl pb-16;
 }
 
 /* Main contasiner */
@@ -40,7 +41,8 @@ main {
 }
 
 .fixed-section__header {
-  @apply sticky top-[18rem] z-10 font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
+  @apply sticky z-10 font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
+  top: var(--header-height);
 }
 
 .fixed-section__content {

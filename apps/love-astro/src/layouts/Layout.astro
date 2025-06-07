@@ -24,6 +24,17 @@ import SmoothScroll from '@components/SmoothScroll.astro'
   </body>
 </html>
 
+<script>
+  import { initHeaderHeight, cleanupHeaderHeight } from '@utils/headerHeight'
+
+  // Initialize header height management
+  document.addEventListener('DOMContentLoaded', initHeaderHeight)
+
+  // Clean up on page navigation
+  document.addEventListener('astro:before-swap', cleanupHeaderHeight)
+  document.addEventListener('astro:after-swap', initHeaderHeight)
+</script>
+
 <style>
   html,
   body {
