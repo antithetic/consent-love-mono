@@ -52,7 +52,11 @@ main {
 }
 
 /* Next party classes */
-.next--party--info {
+.next-party-flyer {
+  @apply mx-auto block mt-12 max-w-sm;
+ }
+
+.next-party-info {
   @apply mb-24;
 }
 
@@ -61,19 +65,19 @@ main {
   @apply mb-[6rem];
 }
 
-.playlist--header {
+.playlist-header {
   @apply bg-none;
 }
 
-.playlist--title {
+.playlist-title {
   @apply bg-none;
 }
 
-.playlist--info {
+.playlist-info {
   @apply mx-auto my-12 flex max-w-full flex-col space-y-6 md:max-w-[75%];
 }
 
-.playlist--embed {
+.playlist-embed {
   @apply mx-auto max-w-full md:max-w-[75%];
 }
 
