@@ -12,7 +12,7 @@ interface Props {
 const { class: className, id, headerText } = Astro.props
 
 // Generate a unique random ID if none is provided
-const sectionId = id || `section-${Math.random().toString(36).substr(2, 9)}`
+const sectionId = id || `section-${Date.now().toString(36)}`
 ---
 
 <section id={sectionId} class={`fixed-section ${className || ''}`}>
