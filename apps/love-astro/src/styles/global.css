@@ -29,7 +29,7 @@ header .tagline {
 }
 
 main {
-  @apply relative max-w-3xl mx-auto;
+  @apply relative mx-auto max-w-3xl;
 }
 
 section h2 {
@@ -57,31 +57,32 @@ span .c {
 .events {
   @apply mb-36;
 }
-.playlist {
-  @apply mb-24;
-}
-.playlist_info {
-  @apply mx-auto my-6 max-w-[75%];
-}
-
-.playlist_info p {
-  @apply mb-6 max-w-[65ch];
-}
-
-.embed {
-  @apply mx-auto my-6 max-w-[75%] py-6;
-}
 
 /* / */
 .fixed-section {
-  @apply  flex flex-col;
+  @apply flex flex-col;
 }
 
 .fixed-section__header {
-  @apply sticky  z-10;
-  top: calc(theme('spacing.8') + theme('spacing.12') + theme('fontSize.8xl'));
+  @apply sticky z-10  top-[18rem];
+  /* top: calc(theme('spacing.16') + theme('spacing.16') + theme('fontSize.8xl')); */
 }
 
 .fixed-section__content {
   @apply relative my-12;
+}
+
+.playlist {
+  @apply mb-24;
+}
+.playlist-info {
+  @apply mx-auto my-6 max-w-full md:max-w-[75%];
+}
+
+.playlistinfo p {
+  @apply mb-6 max-w-full md:max-w-[65ch];
+}
+
+.embed {
+  @apply mx-auto my-6 max-w-full py-6 md:max-w-[75%];
 }
