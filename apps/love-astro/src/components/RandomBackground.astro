@@ -1,18 +1,30 @@
 ---
+/**
+ * RandomBackground Component
+ *
+ * A client-side component that displays and manages a random background image.
+ * Supports multiple background images that can be randomly selected on page load
+ * and optionally changed periodically.
+ *
+ * @property {string[]} imageUrls - Array of background image URLs to choose from
+ */
 // Import images directly
-import bg1 from '../assets/bg/background-01.webp'
-import bg2 from '../assets/bg/background-02.webp'
-import bg3 from '../assets/bg/background-03.webp'
+import bg1 from '@assets/bg/background-01.webp'
+import bg2 from '@assets/bg/background-02.webp'
+import bg3 from '@assets/bg/background-03.webp'
 
 // Pass the image URLs to the client
 const imageUrls = [bg1.src, bg2.src, bg3.src]
 ---
 
 <div id="random-background" class="fixed inset-0 -z-10">
-  <img src={imageUrls[0]} alt="Background" class="h-full w-full object-cover" />
+  <img src={imageUrls[0]} alt="" aria-hidden="true" class="h-full w-full object-cover" />
 </div>
 
 <script define:vars={{ imageUrls }}>
+  /**
+   * Sets a random background image from the available options
+   */
   function setRandomBackground() {
     const randomIndex = Math.floor(Math.random() * imageUrls.length)
     const img = document.querySelector('#random-background img')
@@ -25,5 +37,6 @@ const imageUrls = [bg1.src, bg2.src, bg3.src]
   setRandomBackground()
 
   // Optional: Change background periodically
-  // setInterval(setRandomBackground, 5000); // Uncomment to change every 5 seconds
+  // setInterval(setRandomBackground, 5000); 
+  // // Uncomment to change every 5 seconds
 </script>

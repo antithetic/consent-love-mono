@@ -1,0 +1,135 @@
+---
+/**
+ * SpotifyPlaylist component for embedding Spotify playlists in Astro pages
+ *
+ * This component creates a responsive iframe embed for Spotify playlists with support for:
+ * - Full Spotify share URLs or playlist IDs
+ * - Compact and full-size embed modes
+ * - Light and dark themes
+ * - Custom styling with Tailwind CSS classes
+ * - Responsive design
+ */
+
+/**
+ * Props interface for the SpotifyPlaylist component
+ */
+export interface Props {
+  /** Direct playlist ID (e.g., "47b3JV89sKcL6dkC3bMO6p") */
+  playlistId?: string
+  /** Full Spotify playlist share URL (automatically extracts ID) */
+  playlistUrl?: string
+  /** Width of the iframe (number in px or string with units) */
+  width?: number | string
+  /** Height of the iframe (number in px or string with units) */
+  height?: number | string
+  /** Spotify embed theme */
+  theme?: 'light' | 'dark'
+  /** Whether to show playlist cover art */
+  showCoverArt?: boolean
+  /** Use compact embed mode (100% width, 152px height) */
+  compact?: boolean
+  /** Tailwind CSS classes to apply to the iframe element */
+  class?: string
+  /** Tailwind CSS classes to apply to the container div */
+  containerClass?: string
+}
+
+const {
+  playlistId,
+  playlistUrl,
+  width,
+  height,
+  theme = 'dark',
+  showCoverArt = true,
+  compact = false,
+  class: className,
+  containerClass,
+} = Astro.props
+
+/**
+ * Extracts playlist ID from a Spotify share URL
+ * Strips query parameters and extracts the playlist ID from the path
+ *
+ * @param url - Full Spotify playlist URL
+ * @returns Extracted playlist ID
+ */
+function extractPlaylistId(url: string): string {
+  // Strip everything from "?" onward first
+  const cleanUrl = url.split('?')[0]
+  const match = cleanUrl.match(/playlist\/([a-zA-Z0-9]+)/)
+  if (!match) {
+    throw new Error(`Invalid Spotify playlist URL: ${url}`)
+  }
+  return match[1]
+}
+
+// Extract playlist ID from URL or use provided ID
+const finalPlaylistId = playlistUrl
+  ? extractPlaylistId(playlistUrl)
+  : playlistId
+
+if (!finalPlaylistId) {
+  throw new Error('Either playlistId or playlistUrl must be provided')
+}
+
+// Set default dimensions based on compact mode
+const defaultWidth = compact ? '100%' : 352
+const defaultHeight = compact ? 152 : 632
+const finalWidth = width ?? defaultWidth
+const finalHeight = height ?? defaultHeight
+
+// Construct the Spotify embed URL
+const embedUrl = new URL(
+  'https://open.spotify.com/embed/playlist/' + finalPlaylistId,
+)
+embedUrl.searchParams.set('utm_source', 'generator')
+
+// Theme parameter: 0 for dark, 1 for light (Spotify's format)
+embedUrl.searchParams.set('theme', theme === 'light' ? '1' : '0')
+
+if (!showCoverArt) {
+  embedUrl.searchParams.set('show-cover', '0')
+}
+
+const frameStyle = {
+  borderRadius: '12px',
+  border: 'none',
+  width: typeof finalWidth === 'number' ? `${finalWidth}px` : finalWidth,
+  height: typeof finalHeight === 'number' ? `${finalHeight}px` : finalHeight,
+}
+---
+
+<div class={`spotify-playlist-container ${containerClass || ''}`}>
+  <iframe
+    src={embedUrl.toString()}
+    width={typeof finalWidth === 'number' ? finalWidth : undefined}
+    height={typeof finalHeight === 'number' ? finalHeight : undefined}
+    style={frameStyle}
+    class={className}
+    frameborder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+    title={`Spotify Playlist // LOVE HANGOVER # ${finalPlaylistId}`}></iframe>
+</div>
+
+<style>
+  .spotify-playlist-container {
+    display: block;
+    max-width: 100%;
+  }
+
+  .spotify-playlist-container iframe {
+    max-width: 100%;
+    height: auto;
+    min-height: 152px;
+  }
+
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .spotify-playlist-container iframe {
+      width: 100% !important;
+      max-width: 100%;
+    }
+  }
+</style>

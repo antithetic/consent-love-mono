@@ -1,9 +1,16 @@
 ---
+/**
+ * SmoothScroll Component
+ *
+ * A client-side component that implements smooth scrolling using Lenis.
+ * Initializes smooth scrolling on page load and handles reinitialization
+ * during Astro page navigation.
+ */
 import 'lenis/dist/lenis.css'
 ---
 
 <script>
-  import { destroyLenis,initLenis } from '@utils/lenis'
+  import { destroyLenis, initLenis } from '@utils/lenis'
 
   // Initialize on page load
   document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +24,8 @@ import 'lenis/dist/lenis.css'
   // Reinitialize on Astro page navigation
   document.addEventListener('astro:page-load', () => {
     try {
-      destroyLenis(), initLenis()
+      destroyLenis();
+       initLenis();
     } catch (error) {
       console.warn('Failed to initialize smooth scrolling:', error)
     }
