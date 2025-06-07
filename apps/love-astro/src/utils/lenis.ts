@@ -1,6 +1,7 @@
 import Lenis from 'lenis'
 
 let lenis: Lenis | null = null
+let animationId: number | null = null
 
 export function initLenis() {
   if (typeof window === 'undefined') return
@@ -14,10 +15,10 @@ export function initLenis() {
 
   function raf(time: number) {
     lenis?.raf(time)
-    requestAnimationFrame(raf)
+    animationId = requestAnimationFrame(raf)
   }
 
-  requestAnimationFrame(raf)
+  animationId = requestAnimationFrame(raf)
 
   return lenis
 }
@@ -27,6 +28,10 @@ export function getLenis() {
 }
 
 export function destroyLenis() {
+  if (animationId) {
+    cancelAnimationFrame(animationId)
+    animationId = null
+  }
   lenis?.destroy()
   lenis = null
 }
