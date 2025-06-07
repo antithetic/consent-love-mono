@@ -133,7 +133,7 @@ A planned enhancement will allow the component to automatically load and manage 
 
    - Modify the component to use dynamic imports
    - Add error handling for missing or invalid images
-   - Implement fallback to default images if directory is empty
+   - Implement a fallback to default images if the directory is empty
 
 3. **Performance Optimizations**
    - Implement lazy loading for images
@@ -179,7 +179,7 @@ async function loadBackgroundImages() {
 
    - Keep all background images in the `@assets/bg/` directory
    - Use consistent naming convention (e.g., `background-01.webp`)
-   - Include image dimensions in filename (e.g., `background-01-1920x1080.webp`)
+   - Include the image dimensions in the filename (e.g., `background-01-1920x1080.webp`)
 
 2. **Image Requirements**
 
