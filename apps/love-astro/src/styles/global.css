@@ -26,7 +26,7 @@ header {
 
 header h1 {
   font-family: 'Gabarito Variable', system-ui;
-  @apply underline-offset-3 grow pt-8 text-6xl underline md:text-8xl;
+  @apply underline-offset-3 grow pt-8 text-7xl underline md:text-8xl;
 }
 
 header .tagline {
