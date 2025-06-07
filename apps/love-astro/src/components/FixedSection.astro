@@ -4,8 +4,11 @@
 // automatic ID generation for accessibility and styling purposes.
 
 interface Props {
+  /** Additional CSS classes to apply to the section */
   class?: string
+  /** Unique identifier for the section. If not provided, a random ID will be generated */
   id?: string
+  /** Text to display in the fixed header */
   headerText?: string
 }
 
