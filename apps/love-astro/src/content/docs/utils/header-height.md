@@ -24,7 +24,7 @@ export function updateHeaderHeight(): void
 
 Calculates the current header height and updates the CSS variable:
 
-- Measures actual header element height using `getBoundingClientRect()`
+- Includes padding and border in calculations (boundingClientRect measures the border-box, not margins)
 - Includes margins and padding in calculations
 - Updates the `--header-height` CSS variable
 

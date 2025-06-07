@@ -34,7 +34,7 @@ header .tagline {
   @apply mt-2 pb-16 text-xl md:text-2xl;
 }
 
-/* Main contasiner */
+/* Main container */
 main {
   @apply relative mx-auto max-w-3xl;
 }
