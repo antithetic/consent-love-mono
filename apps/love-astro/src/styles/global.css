@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-  @apply bg-lime-400 text-black transition-colors duration-200;
+  @apply bg-lime-400 text-black transition-colors duration-400;
 }
 
 a:focus-visible {
@@ -97,9 +97,13 @@ footer p {
 }
 
 .links a:hover {
-  @apply bg-transparent;
+  @apply bg-transparent ;
 }
 
 .links .icon {
-  @apply inline-block h-6 w-6 hover:bg-yellow-300 hover:fill-black;
+  @apply inline-block h-6 w-6 hover:bg-lime-400 hover:fill-black ;
+} 
+
+.links .icon:hover {
+  @apply transition-colors duration-400;
 }
