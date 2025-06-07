@@ -34,7 +34,7 @@ The `RandomBackground` component is responsible for:
 
 ## Usage
 
-To use the random background in your Astro page:
+To use the random background on your Astro page:
 
 ```astro
 ---
@@ -57,8 +57,8 @@ To add new background images:
 Example:
 
 ```astro
-import newBg from '../assets/bg/background-04.webp' const imageUrls = [bg1.src,
-bg2.src, bg3.src, newBg.src]
+import newBg from '../assets/bg/background-04.webp' 
+const imageUrls = [bg1.src, bg2.src, bg3.src, newBg.src]
 ```
 
 ### Periodic Background Changes
