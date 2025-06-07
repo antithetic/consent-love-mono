@@ -1,0 +1,34 @@
+---
+/**
+ * SmoothScroller Component
+ *
+ * A reusable Astro component that implements smooth scrolling functionality using GSAP's
+ * ScrollSmoother plugin. This component creates a wrapper structure that enables smooth
+ * scrolling effects for any content passed to it via the slot.
+ *
+ * Dependencies:
+ * - GSAP (GreenSock Animation Platform)
+ * - ScrollTrigger plugin
+ * - ScrollSmoother plugin
+ *
+ * @component
+ */
+
+import { gsap } from 'gsap'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Register required GSAP plugins
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+---
+
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <!-- 
+          Slot component that allows parent components to inject content
+          into the smooth scrolling wrapper. This enables the smooth
+          scrolling effect to be applied to any content passed to this component.
+        -->
+    <slot />
+  </div>
+</div>

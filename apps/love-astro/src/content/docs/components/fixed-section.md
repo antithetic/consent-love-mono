@@ -15,17 +15,18 @@ The `FixedHeader` component is a reusable Astro component that creates a fixed h
 
 ## Props
 
-| Prop | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `class` | `string` | No | `undefined` | Custom Tailwind CSS classes to override or extend default styling |
-| `id` | `string` | No | `section-[random]` | Custom ID for the section element. Auto-generates if not provided |
+| Prop    | Type     | Required | Default            | Description                                                       |
+| ------- | -------- | -------- | ------------------ | ----------------------------------------------------------------- |
+| `class` | `string` | No       | `undefined`        | Custom Tailwind CSS classes to override or extend default styling |
+| `id`    | `string` | No       | `section-[random]` | Custom ID for the section element. Auto-generates if not provided |
 
 ## Usage Examples
 
 ### Basic Usage
+
 ```astro
 ---
-import FixedHeader from './components/FixedHeader.astro';
+import FixedHeader from './components/FixedHeader.astro'
 ---
 
 <FixedHeader>
@@ -38,8 +39,9 @@ import FixedHeader from './components/FixedHeader.astro';
 ```
 
 ### With Custom Styling
+
 ```astro
-<FixedHeader class="bg-blue-600 text-white border-blue-700">
+<FixedHeader class="border-blue-700 bg-blue-600 text-white">
   <h1 class="text-xl font-bold">Brand Name</h1>
   <nav class="space-x-4">
     <a href="/" class="hover:text-blue-200">Home</a>
@@ -50,6 +52,7 @@ import FixedHeader from './components/FixedHeader.astro';
 ```
 
 ### With Custom ID
+
 ```astro
 <FixedHeader id="main-navigation" class="bg-gray-900 text-white">
   <div class="flex items-center space-x-2">
@@ -73,16 +76,17 @@ The component comes with sensible defaults:
 ## Customization
 
 ### Overriding Default Styles
+
 Use Tailwind utility classes to customize appearance:
 
 ```astro
 <!-- Dark theme header -->
-<FixedHeader class="bg-gray-800 text-white border-gray-700 shadow-lg">
+<FixedHeader class="border-gray-700 bg-gray-800 text-white shadow-lg">
   <!-- content -->
 </FixedHeader>
 
 <!-- Transparent header -->
-<FixedHeader class="bg-transparent backdrop-blur-sm border-transparent">
+<FixedHeader class="border-transparent bg-transparent backdrop-blur-sm">
   <!-- content -->
 </FixedHeader>
 
@@ -93,10 +97,12 @@ Use Tailwind utility classes to customize appearance:
 ```
 
 ### Adjusting Body Padding
+
 If you need different spacing, modify the global CSS:
 
 ```astro
-<FixedHeader class="py-6"> <!-- Taller header -->
+<FixedHeader class="py-6">
+  <!-- Taller header -->
   <!-- content -->
 </FixedHeader>
 
@@ -110,18 +116,22 @@ If you need different spacing, modify the global CSS:
 ## Technical Details
 
 ### ID Generation
+
 When no `id` prop is provided, the component generates a unique identifier:
+
 - Format: `section-[randomString]`
 - Random string: 9-character alphanumeric
 - Example: `section-k7x9m2p1q`
 
 ### CSS Architecture
+
 - Uses Tailwind utility classes for styling
 - Includes global body padding to prevent content overlap
 - Fixed positioning with high z-index for proper layering
 - Responsive container with automatic margins
 
 ### Browser Compatibility
+
 - Works in all modern browsers
 - Fixed positioning support required
 - CSS Grid/Flexbox support recommended
@@ -145,7 +155,9 @@ When no `id` prop is provided, the component generates a unique identifier:
 ## Troubleshooting
 
 ### Content Hidden Behind Header
+
 If content appears behind the header, adjust the global body padding:
+
 ```css
 :global(body) {
   padding-top: 5rem; /* Increase as needed */
@@ -153,15 +165,19 @@ If content appears behind the header, adjust the global body padding:
 ```
 
 ### Z-Index Issues
+
 If other elements appear above the header, increase the z-index:
+
 ```astro
-<FixedHeader class="z-[60]"> <!-- Higher z-index -->
+<FixedHeader class="z-[60]"> <!-- Higher z-index --></FixedHeader>
 ```
 
 ### Responsive Issues
+
 For mobile-specific styling:
+
 ```astro
-<FixedHeader class="px-2 md:px-4 py-2 md:py-3">
+<FixedHeader class="px-2 py-2 md:px-4 md:py-3">
   <!-- Mobile-optimized content -->
 </FixedHeader>
 ```

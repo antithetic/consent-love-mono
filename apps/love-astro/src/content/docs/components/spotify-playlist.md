@@ -25,7 +25,7 @@ A flexible Astro component for embedding Spotify playlists with TypeScript suppo
 import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 
 <SpotifyPlaylist
-playlistUrl="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
+  playlistUrl="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
 />
 ```
 
