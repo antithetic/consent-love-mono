@@ -22,8 +22,8 @@ A flexible Astro component for embedding Spotify playlists with TypeScript suppo
 ### Using a Spotify Share URL
 
 ```astro
----
-import SpotifyPlaylist from '../components/SpotifyPlaylist.astro'
+
+import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 ---
 
 <SpotifyPlaylist
@@ -43,8 +43,8 @@ import SpotifyPlaylist from '../components/SpotifyPlaylist.astro'
 | ---------------- | -------------------- | --------------------------------- | -------------------------------------- |
 | `playlistId`     | `string?`            | -                                 | Direct Spotify playlist ID             |
 | `playlistUrl`    | `string?`            | -                                 | Full Spotify playlist share URL        |
-| `width`          | `number \| string?`  | `352` (full) / `"100%"` (compact) | Width of the embed                     |
-| `height`         | `number \| string?`  | `632` (full) / `152` (compact)    | Height of the embed                    |
+| `width?`          | `number \| string`  | `352` (full) / `"100%"` (compact) | Width of the embed                     |
+| `height?`         | `number \| string`  | `632` (full) / `152` (compact)    | Height of the embed                    |
 | `theme`          | `'light' \| 'dark'?` | `'dark'`                          | Spotify embed theme                    |
 | `showCoverArt`   | `boolean?`           | `true`                            | Whether to display playlist cover art  |
 | `compact`        | `boolean?`           | `false`                           | Use compact embed mode                 |
@@ -177,7 +177,7 @@ The component uses modern iframe features:
 
 ### Tips
 
-- Use `compact={true}` for better mobile experience in tight spaces
+- Use `compact={true}` for a better mobile experience in tight spaces
 - The `dark` theme generally looks better on most websites
 - Consider using `containerClass` for layout and `class` for visual effects
 - Test responsive behavior across different screen sizes
