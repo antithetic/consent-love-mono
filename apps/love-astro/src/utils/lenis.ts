@@ -11,7 +11,7 @@ let animationId: number | null = null
  */
 export function initLenis() {
   if (typeof window === 'undefined') return
-
+  if (lenis) return lenis
   lenis = new Lenis({
     duration: 1.2,
     // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
