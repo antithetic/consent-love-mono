@@ -38,18 +38,39 @@ export function updateHeaderHeight(): void {
 let orientationHandler: (() => void) | null = null
 
 export function initHeaderHeight(): void {
-  // Initial update
-  updateHeaderHeight()
+  try {
+    // Initial update
+    updateHeaderHeight()
 
-  // Update on resize
-  window.addEventListener('resize', updateHeaderHeight)
+    // Update on resize with error handling
+    const resizeHandler = () => {
+      try {
+        updateHeaderHeight()
+      } catch (error) {
+        console.error('Error updating header height on resize:', error)
+      }
+    }
+    window.addEventListener('resize', resizeHandler)
 
-  // Update on orientation change (for mobile devices)
-  orientationHandler = () => {
-    // Small delay to ensure the DOM has updated
-    setTimeout(updateHeaderHeight, 100)
+    // Update on orientation change (for mobile devices)
+    orientationHandler = () => {
+      try {
+        // Small delay to ensure the DOM has updated
+        setTimeout(() => {
+          try {
+            updateHeaderHeight()
+          } catch (error) {
+            console.error('Error updating header height after orientation change:', error)
+          }
+        }, 100)
+      } catch (error) {
+        console.error('Error in orientation change handler:', error)
+      }
+    }
+    window.addEventListener('orientationchange', orientationHandler)
+  } catch (error) {
+    console.error('Error initializing header height:', error)
   }
-  window.addEventListener('orientationchange', orientationHandler)
 }
 
 export function cleanupHeaderHeight(): void {
