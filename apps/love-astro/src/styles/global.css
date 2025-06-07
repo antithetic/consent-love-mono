@@ -83,8 +83,13 @@ main {
   @apply mx-auto my-12 flex max-w-full flex-col space-y-6 md:max-w-[75%];
 }
 
+
 .playlist-embed {
-  @apply mx-auto max-w-full md:max-w-[75%];
+  @apply mx-auto max-w-full px-2 md:max-w-[75%];
+}
+
+.playlist-tagline {
+  @apply block pl-3;
 }
 
 /* footer: copyright and instagram link */
