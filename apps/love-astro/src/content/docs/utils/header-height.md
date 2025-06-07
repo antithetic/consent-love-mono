@@ -116,7 +116,7 @@ The utility manages three main events:
 - Uses `getBoundingClientRect()` for accurate measurements
 - Handles resize events directly (consider adding debouncing for performance)
 - Includes small delay for orientation changes to ensure DOM updates
-- Properly cleans up event listeners to prevent memory leaks
+- Thoroughly cleans up event listeners to prevent memory leaks
 
 ## Best Practices
 
