@@ -1,0 +1,26 @@
+---
+// FixedSection Component - A reusable Astro component that creates a fixed header section
+// at the top of the page. The header remains visible while scrolling and includes
+// automatic ID generation for accessibility and styling purposes.
+
+interface Props {
+  /** Additional CSS classes to apply to the section */
+  class?: string
+  /** Unique identifier for the section. If not provided, a random ID will be generated */
+  id?: string
+  /** Text to display in the fixed header */
+  headerText?: string
+}
+
+const { class: className, id, headerText } = Astro.props
+
+// Generate a unique random ID if none is provided
+const sectionId = id || `section-${Date.now().toString(36)}`
+---
+
+<section id={sectionId} class={`fixed-section ${className || ''}`}>
+  <div class="fixed-section__header">{headerText}</div>
+  <div class="fixed-section__content">
+    <slot />
+  </div>
+</section>

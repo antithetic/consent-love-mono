@@ -1,5 +1,6 @@
 ---
-import clubCultureFlyer from '@assets/club-culture-2025-06-07.webp'
+import nextPartyFlyer from '@assets/club-culture-2025-06-07.webp'
+import FixedSection from '@components/FixedSection.astro'
 import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
@@ -10,18 +11,17 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
   <header>
     <h1>Love Hangover</h1>
     <p class="tagline">QUEER. PUNK. ACID. SWEAT.</p>
-    <p class="next">
-      <b>NEXT PARTY:</b>
-    </p>
   </header>
 
   <main>
-    <section class="events">
+    <FixedSection id="next-party" headerText="Next Party:" class="next-party">
       <Image
-        src={clubCultureFlyer}
+        src={nextPartyFlyer}
         alt="Club Culture June 7th 2025 at The Casbah"
-        class="mx-auto my-8 block max-w-sm"
+        class="next-party-flyer"
       />
+    </FixedSection>
+    <FixedSection id="next-party-info" headerText="" class="next-party-info">
       <p>
         Dream and Messy Era Present...
         <h2>Club Culture</h2>
@@ -30,11 +30,15 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
           >Event Info + Presale Tickets</a
         >
       </p>
-    </section>
-    <section class="playlist">
-      <b>CHECK OUT OUR PLAYLIST:</b>
-      <h2>Love Hangover Spring Summer 2025</h2>
-      <div class="playlist_info">
+    </FixedSection>
+    <FixedSection
+      id="lh-playlist-header"
+      headerText="Check out our playlist:"
+      class="playlist-header"
+    />
+    <FixedSection id="lh-playlist" headerText="" class="playlist">
+      <h2 class="playlist-title">Love Hangover Spring Summer 2025</h2>
+      <div class="playlist-info">
         <p>
           120 minutes featuring a slice of Love Hangover’s most intoxicating &
           dangerous cuts. Some secrets are meant to be heard. Curated by <a
@@ -44,6 +48,7 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
             >Filoso</a
           >.
         </p>
+
         <p>
           Listen on Spotify [<a
             href="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
@@ -51,13 +56,14 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
           >]
         </p>
       </div>
-      <div class="embed">
+
+      <div class="playlist-embed">
         <SpotifyPlaylist
           playlistUrl="https://open.spotify.com/playlist/47b3JV89sKcL6dkC3bMO6p?si=tcToFt5LSvW_4FedcHpT6w"
           compact={true}
         />
       </div>
-    </section>
+    </FixedSection>
   </main>
 
   <footer>

@@ -7,6 +7,7 @@
  * and optionally changed periodically.
  *
  * @property {string[]} imageUrls - Array of background image URLs to choose from
+ * @property {number} changeInterval - Interval in milliseconds between background changes (0 to disable)
  */
 // Import images directly
 import bg1 from '@assets/bg/background-01.webp'
@@ -15,13 +16,21 @@ import bg3 from '@assets/bg/background-03.webp'
 
 // Pass the image URLs to the client
 const imageUrls = [bg1.src, bg2.src, bg3.src]
+
+// Default to no periodic changes
+const { changeInterval = 0 } = Astro.props
 ---
 
 <div id="random-background" class="fixed inset-0 -z-10">
-  <img src={imageUrls[0]} alt="" aria-hidden="true" class="h-full w-full object-cover" />
+  <img
+    src={imageUrls[0]}
+    alt=""
+    aria-hidden="true"
+    class="h-full w-full object-cover"
+  />
 </div>
 
-<script define:vars={{ imageUrls }}>
+<script define:vars={{ imageUrls, changeInterval }}>
   /**
    * Sets a random background image from the available options
    */
@@ -36,7 +45,8 @@ const imageUrls = [bg1.src, bg2.src, bg3.src]
   // Set random background on page load
   setRandomBackground()
 
-  // Optional: Change background periodically
-  // setInterval(setRandomBackground, 5000); 
-  // // Uncomment to change every 5 seconds
+  // Set up periodic background changes if interval is specified
+  if (changeInterval > 0) {
+    setInterval(setRandomBackground, changeInterval)
+  }
 </script>
