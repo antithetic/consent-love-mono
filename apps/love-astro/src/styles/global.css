@@ -56,6 +56,9 @@ main {
 }
 
 /* playlist classes */
+.playlist {
+  @apply mb-[6rem];
+}
 .playlist--header {
   @apply bg-none;
 }
@@ -74,7 +77,7 @@ main {
 
 /* footer: copyright and instagram link */
 footer {
-  @apply sticky bottom-0 flex flex-col pb-12 text-right;
+  @apply text-center md:sticky md:bottom-0 flex flex-col pb-12 md:text-right;
 }
 
 footer p {
