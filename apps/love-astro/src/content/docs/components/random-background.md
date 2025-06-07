@@ -29,7 +29,7 @@ The `RandomBackground` component is responsible for:
 ### Randomization
 
 - Randomly selects a background image on initial page load
-- Optional periodic background changes (commented out by default)
+- Configurable periodic background changes through the `changeInterval` prop
 - Seamless image switching without page reload
 
 ## Usage
@@ -41,10 +41,20 @@ To use the random background on your Astro page:
 import RandomBackground from '@components/RandomBackground.astro'
 ---
 
+<!-- Basic usage without periodic changes -->
 <RandomBackground />
+
+<!-- With periodic changes every 5 seconds -->
+<RandomBackground changeInterval={5000} />
 ```
 
 ## Configuration
+
+### Component Props
+
+The component accepts the following props:
+
+- `changeInterval` (optional): Number of milliseconds between background changes. Set to 0 or omit to disable periodic changes.
 
 ### Adding New Background Images
 
@@ -68,13 +78,17 @@ const imageUrls = [
 
 ### Periodic Background Changes
 
-To enable periodic background changes:
+To enable periodic background changes, simply pass the desired interval in milliseconds to the `changeInterval` prop:
 
-1. Uncomment the `setInterval` line in the script section
-2. Adjust the interval time (currently set to 5000ms = 5 seconds)
+```astro
+<!-- Change background every 5 seconds -->
+<RandomBackground changeInterval={5000} />
 
-```javascript
-setInterval(setRandomBackground, 5000) // Changes background every 5 seconds
+<!-- Change background every 30 seconds -->
+<RandomBackground changeInterval={30000} />
+
+<!-- Disable periodic changes -->
+<RandomBackground changeInterval={0} />
 ```
 
 ## Styling
@@ -105,3 +119,107 @@ The background is styled with the following properties:
    - Always include alt text for background images
    - Consider providing a way to disable background changes for users with motion sensitivity
    - For decorative backgrounds, it is recommended to use alt="" (empty alt) and aria-hidden="true" rather than a non-empty alt text.
+
+## Future Enhancements
+
+### Dynamic Background Loading
+
+A planned enhancement will allow the component to automatically load and manage background images from the `@assets/bg/` directory without manual imports.
+
+#### Implementation Roadmap
+
+1. **File System Integration**
+   - Use Astro's `import.meta.glob` to dynamically import all images from the bg directory
+   - Filter for supported image formats (WebP, PNG, JPG)
+   - Create a utility function to handle the file loading
+
+2. **Component Updates**
+   - Modify the component to use dynamic imports
+   - Add error handling for missing or invalid images
+   - Implement fallback to default images if directory is empty
+
+3. **Performance Optimizations**
+   - Implement lazy loading for images
+   - Add image preloading for smoother transitions
+   - Cache loaded image paths
+
+#### Example Implementation Structure
+
+```typescript
+// Utility function for loading background images
+async function loadBackgroundImages() {
+  const images = import.meta.glob('@assets/bg/*.{webp,png,jpg,jpeg}')
+  const loadedImages = []
+  
+  for (const path in images) {
+    const image = await images[path]()
+    loadedImages.push(image.default)
+  }
+  
+  return loadedImages
+}
+
+// Component usage
+<RandomBackground autoLoad={true} />
+```
+
+#### Tasks Checklist
+
+- [ ] Create utility function for dynamic image loading
+- [ ] Add support for multiple image formats
+- [ ] Implement error handling and fallbacks
+- [ ] Add image preloading mechanism
+- [ ] Update component props to support auto-loading
+- [ ] Add documentation for new features
+- [ ] Create tests for dynamic loading
+- [ ] Add performance benchmarks
+- [ ] Implement caching strategy
+- [ ] Add loading state handling
+
+#### Best Practices for Image Management
+
+1. **File Organization**
+   - Keep all background images in the `@assets/bg/` directory
+   - Use consistent naming convention (e.g., `background-01.webp`)
+   - Include image dimensions in filename (e.g., `background-01-1920x1080.webp`)
+
+2. **Image Requirements**
+   - Use WebP format for optimal performance
+   - Maintain consistent aspect ratios
+   - Optimize images for web use
+   - Keep file sizes reasonable (recommended < 500KB per image)
+
+3. **Directory Structure**
+   ```
+   src/
+   ├── assets/
+   │   └── bg/
+   │       ├── background-01.webp
+   │       ├── background-02.webp
+   │       └── ...
+   ```
+
+#### Migration Guide
+
+When implementing this feature, existing code will need to be updated:
+
+1. Remove manual image imports
+2. Update component props to include `autoLoad` option
+3. Update any custom image URL arrays to use the new loading mechanism
+4. Test with various image formats and sizes
+
+#### Performance Considerations
+
+- Implement lazy loading for images not immediately needed
+- Consider using a CDN for better image delivery
+- Implement proper caching headers
+- Monitor memory usage with large numbers of images
+- Consider implementing a maximum number of loaded images
+
+#### Accessibility Updates
+
+- Ensure proper alt text generation for dynamic images
+- Maintain aria-hidden attributes for decorative backgrounds
+- Consider adding a way to disable dynamic loading for users with limited bandwidth
+
+This enhancement will make the component more maintainable and easier to use, while maintaining performance and accessibility standards.
