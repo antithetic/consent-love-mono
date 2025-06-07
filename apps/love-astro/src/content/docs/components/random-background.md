@@ -99,3 +99,4 @@ The background is styled with the following properties:
 3. **Accessibility**
    - Always include alt text for background images
    - Consider providing a way to disable background changes for users with motion sensitivity
+   - For decorative backgrounds, it is recommended to use alt="" (empty alt) and aria-hidden="true" rather than a non-empty alt text
