@@ -40,7 +40,28 @@ export function initHeaderHeight(): void {
 /**
  * Cleans up header height event listeners
  */
+// add at top of file to hold the orientation handler reference
+let orientationHandler: (() => void) | null = null
+
+export function initHeaderHeight(): void {
+  // Initial update
+  updateHeaderHeight()
+
+  // Update on resize
+  window.addEventListener('resize', updateHeaderHeight)
+
+  // Update on orientation change (for mobile devices)
+  orientationHandler = () => {
+    // Small delay to ensure the DOM has updated
+    setTimeout(updateHeaderHeight, 100)
+  }
+  window.addEventListener('orientationchange', orientationHandler)
+}
+
 export function cleanupHeaderHeight(): void {
   window.removeEventListener('resize', updateHeaderHeight)
-  window.removeEventListener('orientationchange', updateHeaderHeight)
-} 
+  if (orientationHandler) {
+    window.removeEventListener('orientationchange', orientationHandler)
+    orientationHandler = null
+  }
+}
