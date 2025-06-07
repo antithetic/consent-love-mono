@@ -39,7 +39,7 @@ section h2 {
 }
 
 footer {
-  @apply sticky bottom-0 flex flex-col text-right pb-12;
+  @apply sticky bottom-0 flex flex-col pb-12 text-right;
 }
 
 footer p {
@@ -51,5 +51,5 @@ span .c {
 }
 
 .links .icon {
-  @apply w-6 h-6 inline-block hover:bg-yellow-300 hover:fill-black;
+  @apply inline-block h-6 w-6 hover:bg-yellow-300 hover:fill-black;
 }

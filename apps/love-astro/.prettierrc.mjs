@@ -3,6 +3,7 @@
 export default {
   plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
   singleQuote: true,
+  semi: false,
   printWidth: 80,
   tailwindStylesheet: '@styles/global.css',
   overrides: [
@@ -13,4 +14,4 @@ export default {
       },
     },
   ],
-};
+}

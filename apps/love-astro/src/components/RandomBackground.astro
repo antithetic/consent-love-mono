@@ -1,18 +1,15 @@
 ---
 // RandomBackgroundComponent.astro
-interface Props {
-  className?: string;
-}
 
-const { className = '' } = Astro.props;
+
 
 // Import images directly
-import bg1 from '../assets/bg/background-01.webp';
-import bg2 from '../assets/bg/background-02.webp';
-import bg3 from '../assets/bg/background-03.webp';
+import bg1 from '../assets/bg/background-01.webp'
+import bg2 from '../assets/bg/background-02.webp'
+import bg3 from '../assets/bg/background-03.webp'
 
 // Pass the image URLs to the client
-const imageUrls = [bg1.src, bg2.src, bg3.src];
+const imageUrls = [bg1.src, bg2.src, bg3.src]
 ---
 
 <div id="random-background" class="fixed inset-0 -z-10">
@@ -21,15 +18,15 @@ const imageUrls = [bg1.src, bg2.src, bg3.src];
 
 <script define:vars={{ imageUrls }}>
   function setRandomBackground() {
-    const randomIndex = Math.floor(Math.random() * imageUrls.length);
-    const img = document.querySelector('#random-background img');
+    const randomIndex = Math.floor(Math.random() * imageUrls.length)
+    const img = document.querySelector('#random-background img')
     if (img) {
-      img.src = imageUrls[randomIndex];
+      img.src = imageUrls[randomIndex]
     }
   }
 
   // Set random background on page load
-  setRandomBackground();
+  setRandomBackground()
 
   // Optional: Change background periodically
   // setInterval(setRandomBackground, 5000); // Uncomment to change every 5 seconds

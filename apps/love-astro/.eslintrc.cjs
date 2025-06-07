@@ -4,7 +4,7 @@ module.exports = {
     'plugin:astro/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'simple-import-sort'],
   env: {
     node: true,
     es2022: true,
@@ -37,5 +37,7 @@ module.exports = {
   ],
   rules: {
     // Your custom rules here
+      "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": 'error'
   },
-};
+}
