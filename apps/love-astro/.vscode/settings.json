@@ -2,6 +2,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
-    "global.css": "tailwindcss"
+    "**/src/styles/*.css": "tailwindcss"
   }
 }

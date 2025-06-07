@@ -102,13 +102,9 @@ footer p {
 }
 
 .links a:hover {
-  @apply bg-transparent;
+  @apply hover:bg-lime-400 duration-400 transition-colors;
 }
 
 .links .icon {
-  @apply inline-block h-6 w-6 hover:bg-lime-400 hover:fill-black;
-}
-
-.links .icon:hover {
-  @apply duration-400 transition-colors;
+  @apply inline-block h-6 w-6  hover:fill-black hover:duration-400 transition-colors;
 }
