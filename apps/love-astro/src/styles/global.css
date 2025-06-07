@@ -59,7 +59,7 @@ main {
 
 /* Next party classes */
 .next-party-flyer {
-  @apply mx-auto mt-12 block max-w-sm;
+  @apply mx-auto mt-12 block max-w-full px-2 md:max-w-sm;
 }
 
 .next-party-info {
