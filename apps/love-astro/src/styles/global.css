@@ -44,17 +44,38 @@ main {
   @apply flex flex-col;
 }
 
-.fixed-section__header {
-  @apply sticky z-10 text-xl font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
+.fixed-section h2 {
+  @apply text-4xl;
+}
+
+.fixed-section-header {
+  @apply sticky z-10 text-xl font-bold uppercase tracking-widest;
   top: var(--header-height);
 }
 
-.fixed-section__content {
+.fixed-section-content {
   @apply mb-18;
 }
 
-.fixed-section__content h2 {
-  @apply text-4xl;
+.fixed-section-header h2 {
+  @apply mb-0 inline-block pb-0 text-base;
+}
+
+.fixed-section-header-text {
+  @apply underline decoration-wavy decoration-1 underline-offset-2;
+}
+
+.fixed-section h3 {
+  @apply text-4xl md:text-6xl;
+}
+
+/* .fixed-section-header h2::before {
+  content: '»';
+  @apply mr-2;
+} */
+
+.fixed-section-header-decoration {
+  @apply inline-block text-base no-underline;
 }
 
 /* Next party classes */
@@ -87,12 +108,17 @@ main {
   @apply mx-auto my-12 flex max-w-full flex-col space-y-6 md:max-w-[75%];
 }
 
-.playlist-embed {
-  @apply mx-auto max-w-full px-2 md:max-w-[75%];
+.playlist-tagline {
+  font-family: 'Damion', cursive;
+  @apply bg-black/25 px-6 py-2 text-4xl;
 }
 
-.playlist-tagline {
-  @apply bg-black/25 px-6 py-2;
+.playlist-title-subline {
+  @apply mt-2 block text-xl font-bold tracking-widest;
+}
+
+.playlist-embed {
+  @apply mx-auto max-w-full px-2 md:max-w-[75%];
 }
 
 /* footer: copyright and instagram link */

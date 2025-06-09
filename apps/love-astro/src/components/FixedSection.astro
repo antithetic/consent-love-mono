@@ -10,17 +10,42 @@ interface Props {
   id?: string
   /** Text to display in the fixed header */
   headerText?: string
+  headerClass?: string
+  suffix?: boolean
+  suffixText?: string
 }
 
-const { class: className, id, headerText } = Astro.props
+const {
+  class: className,
+  id,
+  headerText,
+  headerClass,
+  suffix,
+  suffixText,
+} = Astro.props
 
 // Generate a unique random ID if none is provided
 const sectionId = id || `section-${Date.now().toString(36)}`
 ---
 
 <section id={sectionId} class={`fixed-section ${className || ''}`}>
-  <div class="fixed-section__header">{headerText}</div>
-  <div class="fixed-section__content">
+  {
+    headerText && (
+      <div class="fixed-section-header">
+        <h2>
+          <span class="fixed-section-header-text">{headerText}</span>
+        </h2>
+        {suffix && (
+          <span class={`fixed-section-header-decoration ${headerClass || ''}`}>
+            {suffixText || ':'}
+          </span>
+        )}
+      </div>
+    )
+  }
+.fixed-section-header {
+    /* … */
+}
     <slot />
   </div>
 </section>
