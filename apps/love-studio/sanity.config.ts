@@ -1,3 +1,4 @@
+// import {schemaTypes as sharedSchemaTypes} fro`   m '@consent-love/shared-schema'
 import {SmileyMeltingIcon} from '@phosphor-icons/react'
 import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'

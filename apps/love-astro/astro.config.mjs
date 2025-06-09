@@ -2,6 +2,7 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import compressor from 'astro-compressor'
+import showTailwindcssBreakpoint from 'astro-show-tailwindcss-breakpoint'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +16,6 @@ export default defineConfig({
       brotli: true,
       gzip: false,
     }),
+    showTailwindcssBreakpoint(),
   ],
 })

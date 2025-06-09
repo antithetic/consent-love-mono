@@ -34,6 +34,13 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'warn',
       },
     },
+    {
+      // Ignore no-this-alias rule for compiled files
+      files: ['dist/**/*.js'],
+      rules: {
+        '@typescript-eslint/no-this-alias': 'off',
+      },
+    },
   ],
   rules: {
     // Your custom rules here

@@ -16,6 +16,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@consent-love/shared-schema": "workspace:*",
     "@phosphor-icons/react": "^2.1.10",
     "@sanity/ui": "^2.15.18",
     "@sanity/vision": "^3.91.0",

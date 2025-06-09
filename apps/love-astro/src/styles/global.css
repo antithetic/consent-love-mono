@@ -49,7 +49,7 @@ main {
 }
 
 .fixed-section-header {
-  @apply sticky z-10 text-xl font-bold uppercase tracking-widest ;
+  @apply sticky z-10 text-xl font-bold uppercase tracking-widest;
   top: var(--header-height);
 }
 
@@ -57,8 +57,8 @@ main {
   @apply mb-18;
 }
 
-.fixed-section-header  h2 {
-  @apply text-base inline-block  mb-0 pb-0;
+.fixed-section-header h2 {
+  @apply mb-0 inline-block pb-0 text-base;
 }
 
 .fixed-section-header-text {
@@ -69,13 +69,13 @@ main {
   @apply text-4xl md:text-6xl;
 }
 
-.fixed-section-header h2::before {
-  content: "»";
-  @apply  mr-2  ;
-}
+/* .fixed-section-header h2::before {
+  content: '»';
+  @apply mr-2;
+} */
 
 .fixed-section-header-decoration {
-  @apply text-base inline-block no-underline ;
+  @apply inline-block text-base no-underline;
 }
 
 /* Next party classes */
