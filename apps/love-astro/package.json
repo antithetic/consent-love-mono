@@ -20,6 +20,7 @@
     "astro": "^5.8.1",
     "astro-compressor": "^1.0.0",
     "astro-show-tailwindcss-breakpoint": "^1.0.9",
+    "astro-typesafe-routes": "^4.2.5",
     "gsap": "^3.13.0",
     "lenis": "^1.3.4",
     "phosphor-astro": "^2.1.0",

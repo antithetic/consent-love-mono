@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config'
 import compressor from 'astro-compressor'
 import showTailwindcssBreakpoint from 'astro-show-tailwindcss-breakpoint'
 
+import typesafeRoutes from 'astro-typesafe-routes';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -11,11 +13,8 @@ export default defineConfig({
   },
   compressHTML: false,
 
-  integrations: [
-    compressor({
-      brotli: true,
-      gzip: false,
-    }),
-    showTailwindcssBreakpoint(),
-  ],
+  integrations: [compressor({
+    brotli: true,
+    gzip: false,
+  }), showTailwindcssBreakpoint(), typesafeRoutes()],
 })
