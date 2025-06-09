@@ -36,3 +36,14 @@ next-env.d.ts
 
 # Turborepo
 .turbo
+
+# packages
+packages/*/dist
+packages/*/build
+packages/*/node_modules
+packages/*/.next
+packages/*/.turbo
+packages/*/coverage
+packages/*/.env
+packages/*/.env.*
+packages/*/!.env.example
