@@ -58,11 +58,20 @@ main {
 }
 
 .fixed-section-header  h2 {
-  @apply text-base inline-block  underline decoration-wavy decoration-1 underline-offset-1  mb-0 pb-0;
+  @apply text-base inline-block  mb-0 pb-0;
+}
+
+.fixed-section-header-text {
+  @apply underline decoration-wavy decoration-1 underline-offset-2;
 }
 
 .fixed-section h3 {
   @apply text-4xl md:text-6xl;
+}
+
+.fixed-section-header h2::before {
+  content: "»";
+  @apply  mr-2  ;
 }
 
 .fixed-section-header-decoration {

@@ -24,7 +24,7 @@ const sectionId = id || `section-${Date.now().toString(36)}`
 <section id={sectionId} class={`fixed-section ${className || ''}`}>
   {headerText && (
     <div class="fixed-section-header">
-      <h2>{headerText}</h2>{suffix && <span class={`fixed-section-header-decoration ${headerClass || ''}`}>{suffixText || ':'}</span>}
+      <h2><span class="fixed-section-header-text">{headerText}</span></h2>{suffix && <span class={`fixed-section-header-decoration ${headerClass || ''}`}>{suffixText || ':'}</span>}
     </div>
   )}
   <div class="fixed-section-content">
