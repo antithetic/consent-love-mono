@@ -75,6 +75,10 @@ main {
   @apply bg-none;
 }
 
+.playlist-graphic {
+  @apply mx-auto mt-12 block max-w-full px-2 md:max-w-sm;
+}
+
 .playlist-title {
   @apply italic;
 }
@@ -83,13 +87,12 @@ main {
   @apply mx-auto my-12 flex max-w-full flex-col space-y-6 md:max-w-[75%];
 }
 
-
 .playlist-embed {
   @apply mx-auto max-w-full px-2 md:max-w-[75%];
 }
 
 .playlist-tagline {
-  @apply px-6 py-2 bg-black/25;
+  @apply bg-black/25 px-6 py-2;
 }
 
 /* footer: copyright and instagram link */
@@ -102,9 +105,9 @@ footer p {
 }
 
 .links a:hover {
-  @apply hover:bg-lime-400 duration-400 transition-colors;
+  @apply duration-400 transition-colors hover:bg-lime-400;
 }
 
 .links .icon {
-  @apply inline-block h-6 w-6  hover:fill-black hover:duration-400 transition-colors;
+  @apply hover:duration-400 inline-block h-6 w-6 transition-colors hover:fill-black;
 }
