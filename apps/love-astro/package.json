@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource-variable/gabarito": "^5.2.5",
+    "@fontsource/damion": "^5.2.6",
     "@fontsource/rock-salt": "^5.2.5",
     "@fontsource/space-mono": "^5.2.5",
     "@tailwindcss/vite": "^4.1.8",
