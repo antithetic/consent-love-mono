@@ -8,6 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  compressHTML: false,
 
   integrations: [
     compressor({
