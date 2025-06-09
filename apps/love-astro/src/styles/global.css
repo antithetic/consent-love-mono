@@ -44,17 +44,29 @@ main {
   @apply flex flex-col;
 }
 
-.fixed-section__header {
-  @apply sticky z-10 text-xl font-bold uppercase tracking-widest underline decoration-wavy decoration-1 underline-offset-1;
+.fixed-section h2 {
+  @apply text-4xl;
+}
+
+.fixed-section-header {
+  @apply sticky z-10 text-xl font-bold uppercase tracking-widest ;
   top: var(--header-height);
 }
 
-.fixed-section__content {
+.fixed-section-content {
   @apply mb-18;
 }
 
-.fixed-section__content h2 {
-  @apply text-4xl;
+.fixed-section-header  h2 {
+  @apply text-base inline-block  underline decoration-wavy decoration-1 underline-offset-1  mb-0 pb-0;
+}
+
+.fixed-section h3 {
+  @apply text-4xl md:text-6xl;
+}
+
+.fixed-section-header-decoration {
+  @apply text-base inline-block no-underline ;
 }
 
 /* Next party classes */
