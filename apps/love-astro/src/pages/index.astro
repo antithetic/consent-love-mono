@@ -1,8 +1,9 @@
 ---
 import '@fontsource/damion'
 
-import nextPartyFlyer from '@assets/club-culture-2025-06-07.webp'
-import playlistFlyer from '@assets/love-hangove-spring-2025.webp'
+import ClubCulturePartyFlyer from '@assets/club-culture-2025-06-07.webp'
+import NextPartyFlyer from '@assets/2025-07-10-love-hangover.webp'
+import playlistFlyer from '@assets/love-hangover-spring-2025.webp'
 import FixedSection from '@components/FixedSection.astro'
 import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 import Layout from '@layouts/Layout.astro'
@@ -19,12 +20,38 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
   <main>
     <FixedSection
       id="next-party"
+      headerText="Next Party"
+      suffix={true}
+      class="next-party"
+    >
+    <Image
+        src={NextPartyFlyer}
+        alt="Love Hangover July 10th 2025 at Whistle Stop"
+        class="next-party-flyer"
+      />
+    </FixedSection>
+      <FixedSection id="next-party-info" headerText="" class="next-party-info">
+        <p>
+          Love Hangover presents...
+          <h3>Club Majo</h3>
+          <h3>Mind Research</h3>
+          <h3>GOEUR</h3>
+          Saturday, July 10th 2025 at Whistle Stop <br />
+          <a
+            href="https://wl.seetickets.us/event/club-culture/650219?afflky=Casbah"
+            target="_blank">Event Info + Presale Tickets</a
+          >
+        </p>
+      </FixedSection>
+
+    <FixedSection
+      id="latest-party"
       headerText="Latest Parties"
       suffix={true}
       class="next-party"
     >
       <Image
-        src={nextPartyFlyer}
+        src={ClubCulturePartyFlyer}
         alt="Club Culture June 7th 2025 at The Casbah"
         class="next-party-flyer"
       />
