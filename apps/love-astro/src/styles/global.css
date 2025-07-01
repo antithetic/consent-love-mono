@@ -84,7 +84,7 @@ main {
 }
 
 .next-party-info {
-  @apply mb-24;
+  @apply  mb-64;
 }
 
 /* playlist classes */
