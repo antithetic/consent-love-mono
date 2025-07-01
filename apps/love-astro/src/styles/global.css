@@ -118,7 +118,7 @@ main {
 }
 
 .playlist-embed {
-  @apply mx-auto max-w-full px-2 md:max-w-[75%];
+  @apply px-6;
 }
 
 /* footer: copyright and instagram link */
