@@ -1,9 +1,12 @@
 ---
 import '@fontsource/damion'
 
+
 import ClubCulturePartyFlyer from '@assets/club-culture-2025-06-07.webp'
-import NextPartyFlyer from '@assets/2025-07-10-love-hangover.webp'
-import playlistFlyer from '@assets/love-hangover-spring-2025.webp'
+import LoveHangoverJuly from '@assets/2025-07-10-love-hangover.webp'
+import NextPartyFlyer from '@assets/2025-10-01 love hangover.png'
+import playlistFlyerSummer from '@assets/love-hangover-summer-2025.png'
+import playlistFlyerSpring from '@assets/love-hangover-spring-2025.webp'
 import FixedSection from '@components/FixedSection.astro'
 import SpotifyPlaylist from '@components/SpotifyPlaylist.astro'
 import Layout from '@layouts/Layout.astro'
@@ -26,26 +29,50 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
     >
       <Image
         src={NextPartyFlyer}
-        alt="Love Hangover July 10th 2025 at Whistle Stop"
+        alt="Love Hangover October 1st 2025 at Whistle Stop"
         class="next-party-flyer"
       />
     </FixedSection>
     <FixedSection id="next-party-info" headerText="" class="next-party-info">
       <p>
         Love Hangover presents...
-        <h3>Club Majo</h3>
-        <h3>Mind Research</h3>
-        <h3>GOEUR</h3>
-        Saturday, July 10th 2025 at Whistle Stop <br />
+        <h3>Extraterrestre</h3>
+        <h3>FKA Victor</h3>
+        <h3>Skreemn Meme</h3>
+        <h3>Silica Sun</h3>
+        Wednesday, October 1st 2025 at Whistle Stop <br />
         <a href="https://ra.co/events/2205958" target="_blank"
           >Event Info + RSVP</a
         >
       </p>
     </FixedSection>
-
+    <FixedSection
+    id="Love Hangover July"
+    headerText="Past Events"
+    suffix={true}
+    class="next-party"
+  >
+    <Image
+      src={LoveHangoverJuly}
+      alt="Love Hangover July 10th 2025 at Whistle Stop"
+      class="next-party-flyer"
+    />
+  </FixedSection>
+  <FixedSection id="next-party-info" headerText="" class="next-party-info">
+    <p>
+      Love Hangover presents...
+      <h3>Club Majo</h3>
+      <h3>Mind Research</h3>
+      <h3>GOEUR</h3>
+      Saturday, July 10th 2025 at Whistle Stop <br />
+      <a href="https://ra.co/events/2205958" target="_blank"
+        >Event Info + RSVP</a
+      >
+    </p>
+  </FixedSection>
     <FixedSection
       id="latest-party"
-      headerText="Latest Parties"
+      headerText=""
       suffix={true}
       class="next-party"
     >
@@ -66,43 +93,91 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
         >
       </p>
     </FixedSection>
+
+    
+    
     <FixedSection
       id="lh-playlist-header"
-      headerText="Check out our playlist"
+      headerText="Check out our playlists"
+      suffix={true}
+      class="playlist-header"
+    >
+    <div class="playlist-info">
+      <p>
+        120 minutes featuring a slice of Love Hangover’s most intoxicating &
+        dangerous cuts.
+      </p>
+      <em class="playlist-tagline">
+        &ldquo;Some secrets are meant to be heard.&rdquo;
+      </em>
+      <p>
+        Curated by <a
+          href="https://www.instagram.com/lola_rey_/"
+          target="_blank">Miss Lady D</a
+        > & <a href="https://www.instagram.com/antithetic" target="_blank"
+          >Filoso</a
+        >.
+      </p>
+    </div>
+      <Image
+        src={playlistFlyerSummer}
+        alt="LOVE HANGOVER Spring 2025 Spotify Playlist"
+        class="playlist-graphic"
+      />
+    </FixedSection>
+
+    <FixedSection id="lh-playlist" headerText="" class="playlist">
+      <div class="playlist-title">
+        <h3>Summer 2025</h3>
+
+      </div>
+      <div class="playlist-info">
+    
+        <p>
+          This summer we turned it up a notch and go deep with our selections. These ones will make you go bang.
+        </p>
+
+        <p>
+          Listen on Spotify [<a
+            href="https://go.consent.press/love-hangover-summer-2025"
+            target="_blank">LINK</a
+          >]
+        </p>
+      </div>
+
+      <div class="playlist-embed">
+        <SpotifyPlaylist
+          playlistUrl="https://open.spotify.com/playlist/5sAdC54u8cSqgUy6oBLgeI?si=00731ea2c2be4b2d"
+          compact={true}
+        />
+      </div>
+    </FixedSection>
+
+    <FixedSection
+      id="lh-playlist-header"
+      headerText=""
       suffix={true}
       class="playlist-header"
     >
       <Image
-        src={playlistFlyer}
+        src={playlistFlyerSpring}
         alt="LOVE HANGOVER Spring 2025 Spotify Playlist"
         class="playlist-graphic"
       />
     </FixedSection>
     <FixedSection id="lh-playlist" headerText="" class="playlist">
       <div class="playlist-title">
-        <h3>Love Hangover</h3>
-        <span class="playlist-title-subline">Spring 2025</span>
+        <h3>Spring 2025</h3>
+
       </div>
       <div class="playlist-info">
         <p>
-          120 minutes featuring a slice of Love Hangover’s most intoxicating &
-          dangerous cuts.
-        </p>
-        <em class="playlist-tagline">
-          &ldquo;Some secrets are meant to be heard.&rdquo;
-        </em>
-        <p>
-          Curated by <a
-            href="https://www.instagram.com/lola_rey_/"
-            target="_blank">Miss Lady D</a
-          > & <a href="https://www.instagram.com/antithetic" target="_blank"
-            >Filoso</a
-          >.
+          Tune in to our Spring 2025 playlist, featuring A selection of spring time warmers and breezy club bangers.
         </p>
 
         <p>
           Listen on Spotify [<a
-            href="https://go.consent.press/love-hangove-spring-2025"
+            href="https://go.consent.press/love-hangover-spring-2025"
             target="_blank">LINK</a
           >]
         </p>
@@ -115,6 +190,7 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
         />
       </div>
     </FixedSection>
+
   </main>
 
   <footer>

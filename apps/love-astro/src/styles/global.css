@@ -118,7 +118,7 @@ main {
 }
 
 .playlist-embed {
-  @apply px-6;
+  @apply px-10;
 }
 
 /* footer: copyright and instagram link */
