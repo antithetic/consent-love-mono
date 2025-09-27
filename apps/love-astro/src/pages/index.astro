@@ -1,9 +1,9 @@
 ---
 import '@fontsource/damion'
 
-
 import ClubCulturePartyFlyer from '@assets/club-culture-2025-06-07.webp'
 import LoveHangoverJuly from '@assets/2025-07-10-love-hangover.webp'
+import MachineClubFlyer from '@assets/2025-10-01-machine-club-filoso.jpg'
 import NextPartyFlyer from '@assets/2025-10-01 love hangover.png'
 import playlistFlyerSummer from '@assets/love-hangover-summer-2025.png'
 import playlistFlyerSpring from '@assets/love-hangover-spring-2025.webp'
@@ -23,7 +23,7 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
   <main>
     <FixedSection
       id="next-party"
-      headerText="Next Party"
+      headerText="Upcoming Events"
       suffix={true}
       class="next-party"
     >
@@ -47,29 +47,53 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
       </p>
     </FixedSection>
     <FixedSection
-    id="Love Hangover July"
-    headerText="Past Events"
-    suffix={true}
-    class="next-party"
-  >
-    <Image
-      src={LoveHangoverJuly}
-      alt="Love Hangover July 10th 2025 at Whistle Stop"
-      class="next-party-flyer"
-    />
-  </FixedSection>
-  <FixedSection id="next-party-info" headerText="" class="next-party-info">
-    <p>
-      Love Hangover presents...
-      <h3>Club Majo</h3>
-      <h3>Mind Research</h3>
-      <h3>GOEUR</h3>
-      Saturday, July 10th 2025 at Whistle Stop <br />
-      <a href="https://ra.co/events/2205958" target="_blank"
-        >Event Info + RSVP</a
-      >
-    </p>
-  </FixedSection>
+      id="latest-party"
+      headerText=""
+      suffix={true}
+      class="next-party"
+    >
+      <Image
+        src={MachineClubFlyer}
+        alt="Machine Club October 2nd 2025 at Club Tee Gee"
+        class="next-party-flyer"
+      />
+    </FixedSection>
+    <FixedSection id="past-party-info" headerText="" class="next-party-info">
+      <p>
+        Restless Nights Presents...
+        <h3>Machine Club</h3>
+        Saturday, June 7th 2025 at The Casbah <br />
+        <a
+          href="https://wl.seetickets.us/event/club-culture/650219?afflky=Casbah"
+          target="_blank">Event Info</a
+        >
+      </p>
+    </FixedSection>
+    <!-- past events -->
+    <FixedSection
+      id="Love Hangover July"
+      headerText="Past Events"
+      suffix={true}
+      class="next-party"
+    >
+      <Image
+        src={LoveHangoverJuly}
+        alt="Love Hangover July 10th 2025 at Whistle Stop"
+        class="next-party-flyer"
+      />
+    </FixedSection>
+    <FixedSection id="next-party-info" headerText="" class="next-party-info">
+      <p>
+        Love Hangover presents...
+        <h3>Club Majo</h3>
+        <h3>Mind Research</h3>
+        <h3>GOEUR</h3>
+        Thursday, July 10th 2025 at Whistle Stop <br />
+        <a href="https://ra.co/events/2205958" target="_blank"
+          >Event Info + RSVP</a
+        >
+      </p>
+    </FixedSection>
     <FixedSection
       id="latest-party"
       headerText=""
@@ -94,31 +118,29 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
       </p>
     </FixedSection>
 
-    
-    
     <FixedSection
       id="lh-playlist-header"
       headerText="Check out our playlists"
       suffix={true}
       class="playlist-header"
     >
-    <div class="playlist-info">
-      <p>
-        120 minutes featuring a slice of Love Hangover’s most intoxicating &
-        dangerous cuts.
-      </p>
-      <em class="playlist-tagline">
-        &ldquo;Some secrets are meant to be heard.&rdquo;
-      </em>
-      <p>
-        Curated by <a
-          href="https://www.instagram.com/lola_rey_/"
-          target="_blank">Miss Lady D</a
-        > & <a href="https://www.instagram.com/antithetic" target="_blank"
-          >Filoso</a
-        >.
-      </p>
-    </div>
+      <div class="playlist-info">
+        <p>
+          120 minutes featuring a slice of Love Hangover’s most intoxicating &
+          dangerous cuts.
+        </p>
+        <em class="playlist-tagline">
+          &ldquo;Some secrets are meant to be heard.&rdquo;
+        </em>
+        <p>
+          Curated by <a
+            href="https://www.instagram.com/lola_rey_/"
+            target="_blank">Miss Lady D</a
+          > & <a href="https://www.instagram.com/antithetic" target="_blank"
+            >Filoso</a
+          >.
+        </p>
+      </div>
       <Image
         src={playlistFlyerSummer}
         alt="LOVE HANGOVER Spring 2025 Spotify Playlist"
@@ -129,12 +151,11 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
     <FixedSection id="lh-playlist" headerText="" class="playlist">
       <div class="playlist-title">
         <h3>Summer 2025</h3>
-
       </div>
       <div class="playlist-info">
-    
         <p>
-          This summer we turned it up a notch and go deep with our selections. These ones will make you go bang.
+          This summer we turned it up a notch and go deep with our selections.
+          These ones will make you go bang.
         </p>
 
         <p>
@@ -168,11 +189,11 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
     <FixedSection id="lh-playlist" headerText="" class="playlist">
       <div class="playlist-title">
         <h3>Spring 2025</h3>
-
       </div>
       <div class="playlist-info">
         <p>
-          Tune in to our Spring 2025 playlist, featuring A selection of spring time warmers and breezy club bangers.
+          Tune in to our Spring 2025 playlist, featuring A selection of spring
+          time warmers and breezy club bangers.
         </p>
 
         <p>
@@ -190,7 +211,6 @@ import InstagramLogo from 'phosphor-astro/InstagramLogo.astro'
         />
       </div>
     </FixedSection>
-
   </main>
 
   <footer>
