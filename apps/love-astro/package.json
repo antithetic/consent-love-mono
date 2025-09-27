@@ -17,7 +17,7 @@
     "@fontsource/rock-salt": "^5.2.5",
     "@fontsource/space-mono": "^5.2.5",
     "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.12.2",
+    "astro": "^5.14.1",
     "astro-compressor": "^1.0.0",
     "astro-show-tailwindcss-breakpoint": "^1.0.9",
     "astro-typesafe-routes": "^4.2.5",
